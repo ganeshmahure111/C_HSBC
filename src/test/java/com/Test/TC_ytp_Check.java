@@ -299,13 +299,15 @@ public class TC_ytp_Check  extends Base_Class {
 		if(CI_PPPChecked.equalsIgnoreCase("y")&& CI_PPChecked.equalsIgnoreCase("n")) {
 			Library.Custom_Click(ytp.cippp_select(), "CIPPP");
 			Thread.sleep(2000);
-			Library.custom_clear(ytp.cippp(),"ci_ppp");
-//			Library.Custom_SendKeys(ytp.cippp(),Keys.CONTROL + "a", null );
+	//		Library.custom_clear(ytp.cippp(),"ci_ppp");
+			Library.Custom_SendKeys(ytp.cippp(),Keys.CONTROL + "a", null );
 			Library.Custom_SendKeys(ytp.cippp(), ci_ppp, "CIPPP - " + ci_ppp);
+			Thread.sleep(2000);
 			Library.Custom_Click(ytp.cippp_select(), "CIPPP");
 		}else if (CI_PPPChecked.equalsIgnoreCase("n")&& CI_PPChecked.equalsIgnoreCase("y")) {
+			Thread.sleep(2000);
 			Library.Custom_Click(ytp.cipp(), "CIPP");
-			Library.Custom_Click(ytp.cipp(), "CIPP");
+			
 		}else if(CI_PPChecked.equalsIgnoreCase("y")&& CI_PPPChecked.equalsIgnoreCase("y")) {
 			Library.custom_print("Both CI Variants cannot be selected, Ignoring the rider.");
 		} 
@@ -314,42 +316,38 @@ public class TC_ytp_Check  extends Base_Class {
 		}
 		
 		//ADB
-		if(ADBChecked.equalsIgnoreCase("y")) {
-			Library.Custom_Click(ytp.adb_select(), "ADB");	
-	    	Library.custom_clear(ytp.adb(),"adb");
+		if(ADBChecked.equalsIgnoreCase("y")) {	
+			Library.Custom_SendKeys(ytp.adb(),Keys.CONTROL + "a", null );
 			Library.Custom_SendKeys(ytp.adb(), adb, "adb "+adb);
-			act.doubleClick(ytp.adb_select());
+			Thread.sleep(2000);
+			Library.Custom_Click(ytp.adb_select(), "ADB Select");
 		}
 				
 		Library.custom_Screenshot_Rider_1(name);
 		
 		//ATPD-PP  &  ATPD-PPP
-		if(ATPD_PPChecked.equalsIgnoreCase("y") && ATPD_PPPChecked.equalsIgnoreCase("n")) {
+		if(ATPD_PPChecked.equalsIgnoreCase("Y") && ATPD_PPPChecked.equalsIgnoreCase("N") ) {
 			Thread.sleep(2000);
 			Library.Custom_Click(ytp.arrow(), "Arrow");
 			Library.Custom_Click(ytp.atpd_PP(), "ATPD-PP");
 			Thread.sleep(2000);
 			Library.custom_Screenshot_Rider_2(name);
 		}
-		else if(ATPD_PPChecked.equalsIgnoreCase("n") && ATPD_PPPChecked.equalsIgnoreCase("y")) {
-			Thread.sleep(2000);
+		else if(ATPD_PPChecked.equalsIgnoreCase("N") && ATPD_PPPChecked.equalsIgnoreCase("Y")) {
+	
 			Library.Custom_Click(ytp.arrow(), "Arrow");
 			Thread.sleep(2000);
-			Library.custom_clear(ytp.atpd_PPP(),"atpd_PPP");
+			Library.Custom_SendKeys(ytp.atpd_PPP(),Keys.CONTROL + "a", null );
 			Library.Custom_SendKeys(ytp.atpd_PPP(), atpd_PPP, "ATPD-PPP " + atpd_PPP);
-			Library.Custom_Click(ytp.atpd_PPP_select(),"ATPD-PPP " );
 			Thread.sleep(2000);
-			Library.custom_Screenshot_Rider_2(name);
-		}
-		else if(ATPD_PPChecked.equalsIgnoreCase("y") &&ATPD_PPPChecked.equalsIgnoreCase("y")) {
-			Library.custom_print("Both ATPD Variants cannot be selected, Ignoring the rider.");
-		}
-		else {
+			Library.Custom_Click(ytp.atpd_PPP_select(),"ATPD-PPP " );
+		} 
+		else if (ATPD_PPChecked.equalsIgnoreCase("N") && ATPD_PPPChecked.equalsIgnoreCase("Y")){
 			Library.custom_print("ATPD Rider not opted.");
 		}
 		
 		if (TI_Checked.equalsIgnoreCase("Y")) {
-			Library.Custom_Click(ytp.arrow(), "arrow-2");
+		//	Library.Custom_Click(ytp.arrow(), "arrow-2");
 			Thread.sleep(2000);
 			Library.Custom_Click(ytp.terminalIllness_Select(), "Terminal Illness select");
 			Library.Custom_Click(ytp.terminalIllness(), "TI");

@@ -309,29 +309,29 @@ public class ytp_journey_1{
 	
 	@FindBy (xpath = "//input[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841540877-panel1594630495974-panel_1607896557-panel1594795092191-guidenumericbox_1244___widget']")
 	private WebElement adb;
-	
-	@FindBy (xpath ="//div[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841540877-panel1594630495974-panel_1607896557-panel1594795092191___guide-item']")	
+	                 
+	@FindBy (xpath ="//div[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841540877-panel1594630495974-panel_1607896557-guideswitch__']")	
 	private WebElement adb_select;
 	
 	@FindBy (xpath = "//input[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841540877-panel1594630495974-panel_1607896567-panel1594795147180-guidenumericbox_1244___widget']")
 	private WebElement atpd_PPP;
 	
-	@FindBy (xpath = "//div[@class='guideFieldNode guideTextDraw addOn_title_atpdp iconText-title withTrim guideStaticText af-field-filled']")
+	@FindBy (xpath = "//div[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841540877-panel1594630495974-panel_1607896567-guideswitch__']")
 	private WebElement atpd_PPP_select;
 	
-	@FindBy (xpath = "//div[@class='guideFieldNode guideTextDraw addOn_title_atpd iconText-title withTrim guideStaticText af-field-filled']")
+	@FindBy (xpath = "//div[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841540877-panel1594630495974-panel_1607896569-guideswitch__']")
 	private WebElement atpd_PP;
 	
 	@FindBy (xpath ="(//div[@class='slickk-next slick-arrow'])[2]")
 	private WebElement arrow;
 	
-	@FindBy (xpath = "//div[@class='guideFieldNode guideTextDraw addOn_title_cipp iconText-title withTrim guideStaticText af-field-filled']")
+	@FindBy (xpath = "//div[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841540877-panel1594630495974-panel_1607896557_cop-guideswitch__']")
 	private WebElement cipp;
 	
 	@FindBy (xpath = "//input[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841540877-panel1594630495974-panel_1607896557_cop_231112403-panel1594795092191-guidenumericbox_1244___widget']")
 	private WebElement cippp;
-	
-	@FindBy (xpath = "//input[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841540877-panel1594630495974-panel_1607896557_cop_231112403-guideswitch___1_widget']")
+					   
+	@FindBy (xpath = "//div[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841540877-panel1594630495974-panel_1607896557_cop_231112403-guideswitch__']")
 	private WebElement cippp_select;
 	
 	@FindBy (xpath = "//div[@class='guideCheckBoxItem afCheckBoxItem addOnCheckedTI guideFieldHorizontalAlignment card-checkbox']")
@@ -355,7 +355,7 @@ public class ytp_journey_1{
 	@FindBy (xpath = "//input[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841540877-panel1594630495974-panel_1607896456_cop-panel1594795169775-guideradiobutton__-4_widget']")
 	private WebElement byp100;
 	
-	@FindBy (xpath = "//input[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841540877-panel1594630495974-panel_1607896456-guideswitch___1_widget']")
+	@FindBy (xpath = "//div[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841540877-panel1594630495974-panel_1607896456-guideswitch__']")
 	private WebElement ccb_Checked;
 	
 	@FindBy (xpath = "//input[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841540877-panel_1297639540-guidedatepicker___widget']")
