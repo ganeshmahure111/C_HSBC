@@ -40,7 +40,7 @@ public class TC_ytp_Check  extends Base_Class {
 		XSSFWorkbook wb = new XSSFWorkbook(fis);
 		XSSFSheet sheet=wb.getSheet("YTP");
 		int rowCount=sheet.getLastRowNum();
-		int colCount=111;
+		int colCount=112;
 		Object[][] dataObj= new Object[rowCount][colCount];
 		
 		for(int i=1;i<=rowCount;i++) {
@@ -67,7 +67,7 @@ public class TC_ytp_Check  extends Base_Class {
 			//Life Secure
 			String Life_cover , String Payout_Type, String Monthly_Income, String Proportion, String MIO ,
 			//Rider
-			String CI_PPPChecked, String ci_ppp,String CI_PPChecked, String ADBChecked, String adb, String ATPD_PPPChecked, String atpd_PPP,  String ATPD_PPChecked,  String TI_Checked ,  String BYP_Checked , String Percentage,  String CCB_Checked ,
+			String CI_PPPChecked, String ci_ppp,String CI_PPChecked, String ADBChecked, String adb, String ATPD_PPPChecked, String atpd_PPP,  String ATPD_PPChecked,  String TI_Checked , String TI, String BYP_Checked , String Percentage,  String CCB_Checked ,
 			
 			String pan,    String pincode, String NauturOfDuty,
 			String payment,
@@ -275,14 +275,20 @@ public class TC_ytp_Check  extends Base_Class {
 			// Nothing 
 		}
 		
-		Library.Custom_Click(ytp.getrecalculate_Quate_2(), "Recalculate Quate");
 		
+		// NEW UPDTE
+		if (Life_cover.equalsIgnoreCase("increasing")) {
+		Library.Custom_Click(ytp.getrecalculate_Quate_2(), "Recalculate Quate");
+		} else if (Life_cover.equalsIgnoreCase("level")) {
+			Library.Custom_Click(ytp.getproceed_2(), "Proceed");
+		}
+			
 		WebElement after = driver.findElement(By.xpath("//p[@class='btm-premiumAmount']"));											
+		
 		String rs4 = after.getText();
 		Library.custom_print_premium(ytp.total_premium(), "After Recalculate "+ rs4);
 		
 		Library.custom_Screenshot_ChoicePlan(name);		
-		Library.Custom_Click(ytp.getproceed_2(), "Proceed");
 		
 //================================================================ CHOOSE ADDITIONAL BENEFITS [RIDERS] ====================================================================
 		
@@ -297,7 +303,8 @@ public class TC_ytp_Check  extends Base_Class {
 		//CI-PPP & CI-PP
 		
 		if(CI_PPPChecked.equalsIgnoreCase("y")&& CI_PPChecked.equalsIgnoreCase("n")) {
-			Library.Custom_Click(ytp.cippp_select(), "CIPPP");
+			Thread.sleep(2000);
+//			Library.Custom_Click(ytp.cippp_select(), "CIPPP");
 			Thread.sleep(2000);
 	//		Library.custom_clear(ytp.cippp(),"ci_ppp");
 			Library.Custom_SendKeys(ytp.cippp(),Keys.CONTROL + "a", null );
@@ -347,10 +354,13 @@ public class TC_ytp_Check  extends Base_Class {
 		}
 		
 		if (TI_Checked.equalsIgnoreCase("Y")) {
-		//	Library.Custom_Click(ytp.arrow(), "arrow-2");
+			Library.Custom_Click(ytp.arrow(), "arrow-2");
+			Thread.sleep(2000);
+			Library.Custom_SendKeys(ytp.terminalIllness(),Keys.CONTROL + "a", null );
+			Library.Custom_SendKeys(ytp.terminalIllness(), TI, "Terminal Illenes " + TI);
 			Thread.sleep(2000);
 			Library.Custom_Click(ytp.terminalIllness_Select(), "Terminal Illness select");
-			Library.Custom_Click(ytp.terminalIllness(), "TI");
+			
 		}
 		
 		

@@ -337,7 +337,7 @@ public class ytp_journey_1{
 	@FindBy (xpath = "//div[@class='guideCheckBoxItem afCheckBoxItem addOnCheckedTI guideFieldHorizontalAlignment card-checkbox']")
 	private WebElement terminalIllness_Select;
 	
-	@FindBy (xpath = "//p[text()='Terminal Illness']")
+	@FindBy (xpath = "//input[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841540877-panel1594630495974-panel_1607896456_cop_4417727-panel1594795169775-guidenumericbox_1244___widget']")
 	private WebElement terminalIllness;
 	
 	@FindBy (xpath = "//div[@class='guideCheckBoxItem afCheckBoxItem addOnCheckedBYP guideFieldHorizontalAlignment card-checkbox']")
