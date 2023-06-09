@@ -40,7 +40,7 @@ public class TC_ytp_Check  extends Base_Class {
 		XSSFWorkbook wb = new XSSFWorkbook(fis);
 		XSSFSheet sheet=wb.getSheet("YTP");
 		int rowCount=sheet.getLastRowNum();
-		int colCount=111;
+		int colCount=112;
 		Object[][] dataObj= new Object[rowCount][colCount];
 		
 		for(int i=1;i<=rowCount;i++) {
@@ -67,7 +67,7 @@ public class TC_ytp_Check  extends Base_Class {
 			//Life Secure
 			String Life_cover , String Payout_Type, String Monthly_Income, String Proportion, String MIO ,
 			//Rider
-			String CI_PPPChecked, String ci_ppp,String CI_PPChecked, String ADBChecked, String adb, String ATPD_PPPChecked, String atpd_PPP,  String ATPD_PPChecked,  String TI_Checked ,  String BYP_Checked , String Percentage,  String CCB_Checked ,
+			String CI_PPPChecked, String ci_ppp,String CI_PPChecked, String ADBChecked, String adb, String ATPD_PPPChecked, String atpd_PPP,  String ATPD_PPChecked,  String TI_Checked , String TI, String BYP_Checked , String Percentage,  String CCB_Checked ,
 			
 			String pan,    String pincode, String NauturOfDuty,
 			String payment,
@@ -275,15 +275,20 @@ public class TC_ytp_Check  extends Base_Class {
 			// Nothing 
 		}
 		
-		Library.Custom_Click(ytp.getrecalculate_Quate_2(), "Recalculate Quate");
+		// NEW UPDTE
+				if (Life_cover.equalsIgnoreCase("increasing")) {
+				Library.Custom_Click(ytp.getrecalculate_Quate_2(), "Recalculate Quate");
+				} else if (Life_cover.equalsIgnoreCase("level")) {
+					Library.Custom_Click(ytp.getproceed_2(), "Proceed");
+				}
+		
 		
 		WebElement after = driver.findElement(By.xpath("//p[@class='btm-premiumAmount']"));											
 		String rs4 = after.getText();
 		Library.custom_print_premium(ytp.total_premium(), "After Recalculate "+ rs4);
 		
 		Library.custom_Screenshot_ChoicePlan(name);		
-		Library.Custom_Click(ytp.getproceed_2(), "Proceed");
-		
+
 //================================================================ CHOOSE ADDITIONAL BENEFITS [RIDERS] ====================================================================
 		
 		scroll.executeScript("window.scrollBy(0,500)", "");
@@ -325,6 +330,7 @@ public class TC_ytp_Check  extends Base_Class {
 				
 		Library.custom_Screenshot_Rider_1(name);
 		
+		
 		//ATPD-PP  &  ATPD-PPP
 		if(ATPD_PPChecked.equalsIgnoreCase("Y") && ATPD_PPPChecked.equalsIgnoreCase("N") ) {
 			Thread.sleep(2000);
@@ -334,7 +340,6 @@ public class TC_ytp_Check  extends Base_Class {
 			Library.custom_Screenshot_Rider_2(name);
 		}
 		else if(ATPD_PPChecked.equalsIgnoreCase("N") && ATPD_PPPChecked.equalsIgnoreCase("Y")) {
-	
 			Library.Custom_Click(ytp.arrow(), "Arrow");
 			Thread.sleep(2000);
 			Library.Custom_SendKeys(ytp.atpd_PPP(),Keys.CONTROL + "a", null );
@@ -346,11 +351,12 @@ public class TC_ytp_Check  extends Base_Class {
 			Library.custom_print("ATPD Rider not opted.");
 		}
 		
+		
 		if (TI_Checked.equalsIgnoreCase("Y")) {
-		//	Library.Custom_Click(ytp.arrow(), "arrow-2");
+			Library.Custom_Click(ytp.arrow(), "arrow-2");
 			Thread.sleep(2000);
-			Library.Custom_Click(ytp.terminalIllness_Select(), "Terminal Illness select");
-			Library.Custom_Click(ytp.terminalIllness(), "TI");
+			Library.Custom_SendKeys(ytp.terminalIllness(),Keys.CONTROL + "a", null );
+			Library.Custom_SendKeys(ytp.terminalIllness(), TI, "Terminal Illenes " + TI);
 		}
 		
 		
@@ -359,21 +365,19 @@ public class TC_ytp_Check  extends Base_Class {
 			Library.Custom_Click(ytp.arrow(), "arrow-2");
 			Library.Custom_Click(ytp.blockYourPremium(), "Block Your Premium ");
 			
-			if(Percentage.equalsIgnoreCase("25%")) {
-				Thread.sleep(2000);
-				Library.Custom_Click(ytp.byp25(), "BYP 25%");
-			} else if (Percentage.equalsIgnoreCase("75%")) {
-				Thread.sleep(2000);
-				Library.Custom_Click(ytp.byp75(), "BYP 75");
-			} else if (Percentage.equalsIgnoreCase("100%")) {
-				Thread.sleep(2000);
-				Library.Custom_Click(ytp.byp100(), "BYP 100%");
-			} else if (Percentage.equalsIgnoreCase("50%")) {
-				Thread.sleep(2000);
-				Library.Custom_Click(ytp.byp50(), "BYP 50%");
-			}
-			
-			
+				if(Percentage.equalsIgnoreCase("25%")) {
+					Thread.sleep(2000);
+					Library.Custom_Click(ytp.byp25(), "BYP 25%");
+				} else if (Percentage.equalsIgnoreCase("75%")) {
+					Thread.sleep(2000);
+					Library.Custom_Click(ytp.byp75(), "BYP 75");
+				} else if (Percentage.equalsIgnoreCase("100%")) {
+					Thread.sleep(2000);
+					Library.Custom_Click(ytp.byp100(), "BYP 100%");
+				} else if (Percentage.equalsIgnoreCase("50%")) {
+					Thread.sleep(2000);
+					Library.Custom_Click(ytp.byp50(), "BYP 50%");
+				}	
 		}
 		
 		if (CCB_Checked.equalsIgnoreCase("Y")) {
