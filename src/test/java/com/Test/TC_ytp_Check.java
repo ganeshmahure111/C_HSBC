@@ -38,9 +38,9 @@ public class TC_ytp_Check  extends Base_Class {
 		String filepath=System.getProperty("user.dir")+"\\TestData\\Data.xlsx";
 		FileInputStream fis = new FileInputStream(filepath);
 		XSSFWorkbook wb = new XSSFWorkbook(fis);
-		XSSFSheet sheet=wb.getSheet("YTP");
+		XSSFSheet sheet=wb.getSheet("Test Cases");
 		int rowCount=sheet.getLastRowNum();
-		int colCount=112;
+		int colCount=113;
 		Object[][] dataObj= new Object[rowCount][colCount];
 		
 		for(int i=1;i<=rowCount;i++) {
@@ -67,7 +67,7 @@ public class TC_ytp_Check  extends Base_Class {
 			//Life Secure
 			String Life_cover , String Payout_Type, String Monthly_Income, String Proportion, String MIO ,
 			//Rider
-			String CI_PPPChecked, String ci_ppp,String CI_PPChecked, String ADBChecked, String adb, String ATPD_PPPChecked, String atpd_PPP,  String ATPD_PPChecked,  String TI_Checked , String TI, String BYP_Checked , String Percentage,  String CCB_Checked ,
+			String CI_PPPChecked, String ci_ppp,String CI_PPChecked, String ADBChecked, String adb, String ATPD_PPPChecked, String atpd_PPP,  String ATPD_PPChecked,  String TI_Checked , String TI, String BYP_Checked , String Percentage,  String CCB_Checked , String ccb , 
 			
 			String pan,    String pincode, String NauturOfDuty,
 			String payment,
@@ -102,6 +102,8 @@ public class TC_ytp_Check  extends Base_Class {
 		
 		log.info("================== || YOUNG TERM PLAN JOURNEY || ===================");
 		log.info("==================== ||   TEST CASE START || ====================");
+		
+		System.out.println("The thread ID for Chrome is "+ Thread.currentThread().getId());
 		
 		Robot r = new Robot();
 		for(int i=0; i<4; i++) {
@@ -276,11 +278,11 @@ public class TC_ytp_Check  extends Base_Class {
 		}
 		
 		// NEW UPDTE
-				if (Life_cover.equalsIgnoreCase("increasing")) {
-				Library.Custom_Click(ytp.getrecalculate_Quate_2(), "Recalculate Quate");
-				} else if (Life_cover.equalsIgnoreCase("level")) {
-					Library.Custom_Click(ytp.getproceed_2(), "Proceed");
-				}
+			if (Life_cover.equalsIgnoreCase("increasing")) {
+			Library.Custom_Click(ytp.getrecalculate_Quate_2(), "Recalculate Quate");
+			} else if (Life_cover.equalsIgnoreCase("level")) {
+			Library.Custom_Click(ytp.getproceed_2(), "Proceed");
+			}
 		
 		
 		WebElement after = driver.findElement(By.xpath("//p[@class='btm-premiumAmount']"));											
@@ -299,20 +301,17 @@ public class TC_ytp_Check  extends Base_Class {
 		String rs5 = Before.getText();
 		Library.custom_print_premium(ytp.total_premium(), rs5);
 		
-		//CI-PPP & CI-PP
-		
+		//CI-PPP & CI-PP	
 		if(CI_PPPChecked.equalsIgnoreCase("y")&& CI_PPChecked.equalsIgnoreCase("n")) {
-			Library.Custom_Click(ytp.cippp_select(), "CIPPP");
-			Thread.sleep(2000);
-	//		Library.custom_clear(ytp.cippp(),"ci_ppp");
+//			Library.Custom_Click(ytp.cippp_select(), "CIPPP");
 			Library.Custom_SendKeys(ytp.cippp(),Keys.CONTROL + "a", null );
-			Library.Custom_SendKeys(ytp.cippp(), ci_ppp, "CIPPP - " + ci_ppp);
 			Thread.sleep(2000);
+			Library.Custom_SendKeys(ytp.cippp(), ci_ppp, "CIPPP - " + ci_ppp);
+			Thread.sleep(1000);
 			Library.Custom_Click(ytp.cippp_select(), "CIPPP");
 		}else if (CI_PPPChecked.equalsIgnoreCase("n")&& CI_PPChecked.equalsIgnoreCase("y")) {
 			Thread.sleep(2000);
-			Library.Custom_Click(ytp.cipp(), "CIPP");
-			
+			Library.Custom_Click(ytp.cipp(), "CIPP");		
 		}else if(CI_PPChecked.equalsIgnoreCase("y")&& CI_PPPChecked.equalsIgnoreCase("y")) {
 			Library.custom_print("Both CI Variants cannot be selected, Ignoring the rider.");
 		} 
@@ -327,20 +326,30 @@ public class TC_ytp_Check  extends Base_Class {
 			Thread.sleep(2000);
 			Library.Custom_Click(ytp.adb_select(), "ADB Select");
 		}
-				
+		Thread.sleep(2000);
 		Library.custom_Screenshot_Rider_1(name);
 		
+//		act.click(ytp.arrow());
+//		Library.Custom_Click(ytp.arrow(), "arrow-2");
+//		Library.Custom_Click(ytp.arrow(), "Arrow");
 		
 		//ATPD-PP  &  ATPD-PPP
+		
+		if (ATPD_PPChecked.equalsIgnoreCase("Y") || ATPD_PPPChecked.equalsIgnoreCase("Y")  || TI_Checked.equalsIgnoreCase("Y")) {
+			Library.Custom_Click(ytp.arrow(), "Arrow btn");
+		} 
+			
+			
+		//OK	
 		if(ATPD_PPChecked.equalsIgnoreCase("Y") && ATPD_PPPChecked.equalsIgnoreCase("N") ) {
 			Thread.sleep(2000);
-			Library.Custom_Click(ytp.arrow(), "Arrow");
+//			Library.Custom_Click(ytp.arrow(), "Arrow");
 			Library.Custom_Click(ytp.atpd_PP(), "ATPD-PP");
 			Thread.sleep(2000);
 			Library.custom_Screenshot_Rider_2(name);
 		}
-		else if(ATPD_PPChecked.equalsIgnoreCase("N") && ATPD_PPPChecked.equalsIgnoreCase("Y")) {
-			Library.Custom_Click(ytp.arrow(), "Arrow");
+ 		else if(ATPD_PPChecked.equalsIgnoreCase("N") && ATPD_PPPChecked.equalsIgnoreCase("Y")) {
+//			Library.Custom_Click(ytp.arrow(), "Arrow");
 			Thread.sleep(2000);
 			Library.Custom_SendKeys(ytp.atpd_PPP(),Keys.CONTROL + "a", null );
 			Library.Custom_SendKeys(ytp.atpd_PPP(), atpd_PPP, "ATPD-PPP " + atpd_PPP);
@@ -353,16 +362,23 @@ public class TC_ytp_Check  extends Base_Class {
 		
 		
 		if (TI_Checked.equalsIgnoreCase("Y")) {
-			Library.Custom_Click(ytp.arrow(), "arrow-2");
+//			Library.Custom_Click(ytp.arrow(), "arrow-2");
 			Thread.sleep(2000);
-			Library.Custom_SendKeys(ytp.terminalIllness(),Keys.CONTROL + "a", null );
-			Library.Custom_SendKeys(ytp.terminalIllness(), TI, "Terminal Illenes " + TI);
+			Library.Custom_Click(ytp.terminalIllness_Select(), "TI Select");
 		}
+		
+		
+		
+		// BYP & CCB 
+		if (BYP_Checked.equalsIgnoreCase("Y") || CCB_Checked.equalsIgnoreCase("Y") ) {
+			Library.Custom_Click(ytp.arrow(), "Arrrow btn");
+		}
+		
 		
 		
 		if (BYP_Checked.equalsIgnoreCase("Y")) {
 			Thread.sleep(3000);
-			Library.Custom_Click(ytp.arrow(), "arrow-2");
+//			Library.Custom_Click(ytp.arrow(), "arrow-2");
 			Library.Custom_Click(ytp.blockYourPremium(), "Block Your Premium ");
 			
 				if(Percentage.equalsIgnoreCase("25%")) {
@@ -381,7 +397,10 @@ public class TC_ytp_Check  extends Base_Class {
 		}
 		
 		if (CCB_Checked.equalsIgnoreCase("Y")) {
-		//	Library.Custom_Click(ytp.arrow_2(), "arrow-2");
+			
+			Library.Custom_SendKeys(ytp.ccb(),Keys.CONTROL + "a", null );
+			Thread.sleep(2000);
+			Library.Custom_SendKeys(ytp.ccb(), ccb, "CCB Sumassured" + ccb);
 			Library.Custom_Click(ytp.ccb_Checked(), "CCB Select");
 			Library.Custom_SendKeys(ytp.ccbDob(), "20/04/2022", "CCB DOB");
 			Library.Custom_Click(ytp.ccbMale(), "CCB Male");

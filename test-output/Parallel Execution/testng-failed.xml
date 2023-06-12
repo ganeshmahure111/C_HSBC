@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Parallel Execution]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test Parallel(failed)">
+    <classes>
+      <class name="com.Test.TC_ytp_Check_Copy">
+        <methods>
+          <include name="verify_ytp_journey"/>
+          <include name="SetUp"/>
+          <include name="verify_ytp_journey2"/>
+          <include name="tearDown"/>
+          <include name="BS"/>
+        </methods>
+      </class> <!-- com.Test.TC_ytp_Check_Copy -->
+    </classes>
+  </test> <!-- Test Parallel(failed) -->
+</suite> <!-- Failed suite [Parallel Execution] -->

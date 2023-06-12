@@ -355,6 +355,9 @@ public class ytp_journey_1{
 	@FindBy (xpath = "//input[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841540877-panel1594630495974-panel_1607896456_cop-panel1594795169775-guideradiobutton__-4_widget']")
 	private WebElement byp100;
 	
+	@FindBy (xpath = "//input[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841540877-panel1594630495974-panel_1607896456-panel1594795169775-guidenumericbox_1244___widget']")
+	private WebElement ccb;
+	
 	@FindBy (xpath = "//div[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841540877-panel1594630495974-panel_1607896456-guideswitch__']")
 	private WebElement ccb_Checked;
 	
@@ -436,6 +439,9 @@ public class ytp_journey_1{
 		return byp100;
 	}
 	
+	public WebElement ccb() {
+		return ccb;
+	}
 	
 	public WebElement ccb_Checked() {
 		return ccb_Checked;
