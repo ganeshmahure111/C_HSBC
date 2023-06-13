@@ -5,7 +5,7 @@
     <classes>
       <class name="com.Test.TC_ytp_Check">
         <methods>
-          <include name="verify_ytp_journey"/>
+          <include name="verify_ytp_journey" invocation-numbers="0"/>
           <include name="SetUp"/>
           <include name="tearDown"/>
           <include name="BS"/>

@@ -172,7 +172,6 @@ public class ytp_journey_1{
 	private WebElement sixty_year;
 	
 	@FindBy (xpath = "//div[@class='guideCheckBoxItem afCheckBoxItem checkboxROP guideFieldHorizontalAlignment choice-check-box panelWithTooltipRop']")
-	//   //div[@class='guideCheckBoxItem afCheckBoxItem checkboxROP guideFieldHorizontalAlignment choice-check-box panelWithTooltipRop']
 	private WebElement rop_Checked;
 	
 	//========================================
@@ -464,7 +463,116 @@ public class ytp_journey_1{
 		return proceed_3;
 	}
 	
-	//============================================================================  Policy Premium Detail ===================================================================\\
+//============================================================================  Policy Premium Detail ===================================================================\\
+
+	@FindBy (xpath = "//input[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841831778-guideswitch__-2_widget']")
+	private WebElement spouseNo;
+	
+	@FindBy (xpath = "//input[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841831778-guideswitch__-1_widget']")
+	private WebElement spouseYes;
+	
+	@FindBy (xpath = "//input[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841831778-panel_248720055-panel-panel1593086651408-panel1603726674450-guidetextbox_1751980___widget']")
+	private WebElement spouseFirstName;
+	
+	@FindBy (xpath = "//input[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841831778-panel_248720055-panel-panel1593086651408-panel1603726674450-guidetextbox_1801387___widget']")
+	private WebElement spouseLastName;
+	
+	@FindBy (xpath = "//input[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841831778-panel_248720055-panel-panel1593086651408-guideradiobutton__-1_widget']")
+	private WebElement spouseMale;
+	
+	@FindBy (xpath = "//input[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841831778-panel_248720055-panel-panel1593086651408-guideradiobutton__-2_widget']")
+	private WebElement spouseFemale;
+	
+	@FindBy (xpath = "//input[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841831778-panel_248720055-panel-panel1593086651408-guideradiobutton__-3_widget']")
+	private WebElement spouseTransgender;
+	
+	@FindBy (xpath = "//input[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841831778-panel_248720055-panel-panel1593086651408-guidedatepicker___widget']")
+	private WebElement spouseDob;
+	
+	@FindBy (xpath = "//input[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841831778-panel_248720055-panel-panel1593086651408-guideradiobutton_tobacco__-2_widget']")
+	private WebElement spouseSmokeNo;
+	
+	@FindBy (xpath = "//input[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841831778-panel_248720055-panel-panel1593086651408-guideradiobutton_tobacco__-1_widget']")
+	private WebElement spouseSmokeYes;
+	
+	@FindBy (xpath = "//input[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841831778-panel_248720055-panel-panel1593086651408-guideradiobutton_337998828__-1_widget']")
+	private WebElement spouseWorking;
+	
+	@FindBy (xpath = "//input[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841831778-panel_248720055-panel-panel1593086651408-guideradiobutton_337998828__-2_widget']")
+	private WebElement spouseNotWorking;
+	
+	@FindBy (xpath = "//input[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841831778-panel_248720055-panel-panel1593086651408-guideradiobutton_337998829__-1_widget']")
+	private WebElement spouseSalaried;
+	
+	@FindBy (xpath = "//input[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel1602841831778-panel_248720055-panel-panel1593086651408-guideradiobutton_337998829__-2_widget']")
+	private WebElement spouseSelfEmployed;
+	
+	
+	//================================================= GET METHOD ================================================\\
+
+	public WebElement spouseNo() {
+		return spouseNo;
+	}
+	
+	public WebElement spouseYes() {
+		return spouseYes;
+	}
+	
+	public WebElement spouseFirstName() {
+		return spouseFirstName;
+	}
+	
+	public WebElement spouseLastName() {
+		return spouseLastName;
+	}
+	
+	public WebElement spouseMale() {
+		return spouseMale;
+	}
+	
+	public WebElement spouseFemale() {
+		return spouseFemale;
+	}
+	
+	public WebElement spouseTransgender() {
+		return spouseTransgender;
+	}
+	
+	public WebElement spouseDob() {
+		return spouseDob;
+	}
+	
+	public WebElement spouseSmokeNo() {
+		return spouseSmokeNo;
+	}
+	
+	public WebElement spouseSmokeYes() {
+		return spouseSmokeYes;
+	}
+	
+	public WebElement spouseWorking() {
+		return spouseWorking;
+	}
+	
+	public WebElement spouseNotWorking() {
+		return spouseNotWorking;
+	}
+	
+	public WebElement spouseSalaried() {
+		return spouseSalaried;
+	}
+	
+	public WebElement spouseSelfEmployed() {
+		return spouseSelfEmployed;
+	}
+	
+	
+	
+	
+	
+	
+	
+//============================================================================  Policy Premium Detail ===================================================================\\
 	
 	@FindBy (xpath = "//input[@id='guideContainer-rootPanel-panel_1080226036-panel_1173209043-panel_1712664342-panel_379119756-guidetextbox___widget']")
 	private WebElement pan;
