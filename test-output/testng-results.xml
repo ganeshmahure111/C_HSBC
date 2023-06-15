@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-13T18:08:06 IST" name="Default suite" finished-at="2023-06-13T18:10:37 IST" duration-ms="151130">
+  <suite started-at="2023-06-15T17:00:00 IST" name="Default suite" finished-at="2023-06-15T17:03:47 IST" duration-ms="227429">
     <groups>
     </groups>
-    <test started-at="2023-06-13T18:08:06 IST" name="Default test" finished-at="2023-06-13T18:10:37 IST" duration-ms="151130">
+    <test started-at="2023-06-15T17:00:00 IST" name="Default test" finished-at="2023-06-15T17:03:47 IST" duration-ms="227429">
       <class name="com.Test.TC_ytp_Check">
-        <test-method is-config="true" signature="BS()[pri:0, instance:com.Test.TC_ytp_Check@4f2b503c]" started-at="2023-06-13T18:08:05 IST" name="BS" finished-at="2023-06-13T18:08:06 IST" duration-ms="1300" status="PASS">
+        <test-method is-config="true" signature="BS()[pri:0, instance:com.Test.TC_ytp_Check@4f2b503c]" started-at="2023-06-15T16:59:59 IST" name="BS" finished-at="2023-06-15T17:00:00 IST" duration-ms="1311" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BS -->
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.Test.TC_ytp_Check@4f2b503c]" started-at="2023-06-13T18:08:06 IST" name="SetUp" finished-at="2023-06-13T18:08:36 IST" duration-ms="29797" status="PASS">
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.Test.TC_ytp_Check@4f2b503c]" started-at="2023-06-15T17:00:00 IST" name="SetUp" finished-at="2023-06-15T17:00:34 IST" duration-ms="33982" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetUp -->
-        <test-method signature="verify_ytp_journey(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.Test.TC_ytp_Check@4f2b503c]" started-at="2023-06-13T18:08:36 IST" name="verify_ytp_journey" data-provider="excelData" finished-at="2023-06-13T18:10:37 IST" duration-ms="121106" status="FAIL">
+        <test-method signature="verify_ytp_journey(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.Test.TC_ytp_Check@4f2b503c]" started-at="2023-06-15T17:00:34 IST" name="verify_ytp_journey" data-provider="excelData" finished-at="2023-06-15T17:03:47 IST" duration-ms="193211" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -39,7 +39,7 @@
             </param>
             <param index="4">
               <value>
-                <![CDATA[ganeshmahure111@gmail.com]]>
+                <![CDATA[ganesh.digambarmahure@canarahsbclife.in]]>
               </value>
             </param>
             <param index="5">
@@ -134,7 +134,7 @@
             </param>
             <param index="23">
               <value>
-                <![CDATA[N]]>
+                <![CDATA[Y]]>
               </value>
             </param>
             <param index="24">
@@ -179,227 +179,227 @@
             </param>
             <param index="32">
               <value>
-                <![CDATA[1200000]]>
+                <![CDATA[N]]>
               </value>
             </param>
             <param index="33">
               <value>
-                <![CDATA[N]]>
+                <![CDATA[25.0]]>
               </value>
             </param>
             <param index="34">
               <value>
-                <![CDATA[25.0]]>
+                <![CDATA[N]]>
               </value>
             </param>
             <param index="35">
               <value>
-                <![CDATA[N]]>
+                <![CDATA[2900000]]>
               </value>
             </param>
             <param index="36">
               <value>
-                <![CDATA[2900000]]>
+                <![CDATA[ERLPM1070B]]>
               </value>
             </param>
             <param index="37">
               <value>
-                <![CDATA[ERLPM1070B]]>
+                <![CDATA[431003]]>
               </value>
             </param>
             <param index="38">
               <value>
-                <![CDATA[431003]]>
+                <![CDATA[Transport owner]]>
               </value>
             </param>
             <param index="39">
               <value>
-                <![CDATA[Transport owner]]>
+                <![CDATA[Pay Later]]>
               </value>
             </param>
             <param index="40">
               <value>
-                <![CDATA[Pay Later]]>
+                <![CDATA[787478797476]]>
               </value>
             </param>
             <param index="41">
               <value>
-                <![CDATA[787478797476]]>
+                <![CDATA[father]]>
               </value>
             </param>
             <param index="42">
               <value>
-                <![CDATA[father]]>
+                <![CDATA[middle]]>
               </value>
             </param>
             <param index="43">
               <value>
-                <![CDATA[middle]]>
+                <![CDATA[last]]>
               </value>
             </param>
             <param index="44">
               <value>
-                <![CDATA[last]]>
+                <![CDATA[mother]]>
               </value>
             </param>
             <param index="45">
               <value>
-                <![CDATA[mother]]>
+                <![CDATA[middle3]]>
               </value>
             </param>
             <param index="46">
               <value>
-                <![CDATA[middle3]]>
+                <![CDATA[last3]]>
               </value>
             </param>
             <param index="47">
               <value>
-                <![CDATA[last3]]>
+                <![CDATA[Single]]>
               </value>
             </param>
             <param index="48">
               <value>
-                <![CDATA[Married]]>
+                <![CDATA[7478957714]]>
               </value>
             </param>
             <param index="49">
               <value>
-                <![CDATA[7478957714]]>
+                <![CDATA[N]]>
               </value>
             </param>
             <param index="50">
               <value>
-                <![CDATA[Y]]>
+                <![CDATA[BJP]]>
               </value>
             </param>
             <param index="51">
               <value>
-                <![CDATA[BJP]]>
+                <![CDATA[Brother]]>
               </value>
             </param>
             <param index="52">
               <value>
-                <![CDATA[Brother]]>
+                <![CDATA[Buisness]]>
               </value>
             </param>
             <param index="53">
               <value>
-                <![CDATA[Buisness]]>
+                <![CDATA[BJP]]>
               </value>
             </param>
             <param index="54">
               <value>
-                <![CDATA[BJP]]>
+                <![CDATA[Support]]>
               </value>
             </param>
             <param index="55">
               <value>
-                <![CDATA[Support]]>
+                <![CDATA[pending ]]>
               </value>
             </param>
             <param index="56">
               <value>
-                <![CDATA[pending ]]>
+                <![CDATA[N]]>
               </value>
             </param>
             <param index="57">
               <value>
-                <![CDATA[N]]>
+                <![CDATA[PAN card]]>
               </value>
             </param>
             <param index="58">
               <value>
-                <![CDATA[PAN card]]>
+                <![CDATA[123456791]]>
               </value>
             </param>
             <param index="59">
               <value>
-                <![CDATA[123456791]]>
+                <![CDATA[20/04/2030]]>
               </value>
             </param>
             <param index="60">
               <value>
-                <![CDATA[20/04/2030]]>
+                <![CDATA[4465]]>
               </value>
             </param>
             <param index="61">
               <value>
-                <![CDATA[4465]]>
+                <![CDATA[1234512345]]>
               </value>
             </param>
             <param index="62">
               <value>
-                <![CDATA[1234512345]]>
+                <![CDATA[25/05/2032]]>
               </value>
             </param>
             <param index="63">
               <value>
-                <![CDATA[25/05/2032]]>
+                <![CDATA[Ration Card]]>
               </value>
             </param>
             <param index="64">
               <value>
-                <![CDATA[Ration Card]]>
+                <![CDATA[1234567892]]>
               </value>
             </param>
             <param index="65">
               <value>
-                <![CDATA[1234567892]]>
+                <![CDATA[20/05/2030]]>
               </value>
             </param>
             <param index="66">
               <value>
-                <![CDATA[20/05/2030]]>
+                <![CDATA[1234]]>
               </value>
             </param>
             <param index="67">
               <value>
-                <![CDATA[1234]]>
+                <![CDATA[0123456789]]>
               </value>
             </param>
             <param index="68">
               <value>
-                <![CDATA[0123456789]]>
+                <![CDATA[123456123456]]>
               </value>
             </param>
             <param index="69">
               <value>
-                <![CDATA[123456123456]]>
+                <![CDATA[20/08/2028]]>
               </value>
             </param>
             <param index="70">
               <value>
-                <![CDATA[20/08/2028]]>
+                <![CDATA[123125]]>
               </value>
             </param>
             <param index="71">
               <value>
-                <![CDATA[123125]]>
+                <![CDATA[OBC Bank]]>
               </value>
             </param>
             <param index="72">
               <value>
-                <![CDATA[Canara Bank]]>
+                <![CDATA[431003]]>
               </value>
             </param>
             <param index="73">
               <value>
-                <![CDATA[431003]]>
+                <![CDATA[Maharashtra]]>
               </value>
             </param>
             <param index="74">
               <value>
-                <![CDATA[Maharashtra]]>
+                <![CDATA[Aurnagabad, Maharashtra.]]>
               </value>
             </param>
             <param index="75">
               <value>
-                <![CDATA[Aurnagabad, Maharashtra.]]>
+                <![CDATA[Gurgaon]]>
               </value>
             </param>
             <param index="76">
               <value>
-                <![CDATA[Gurgaon]]>
+                <![CDATA[Others]]>
               </value>
             </param>
             <param index="77">
@@ -409,167 +409,167 @@
             </param>
             <param index="78">
               <value>
-                <![CDATA[Others]]>
+                <![CDATA[ID Proof]]>
               </value>
             </param>
             <param index="79">
               <value>
-                <![CDATA[ID Proof]]>
+                <![CDATA[Seaman / Engine-room worker]]>
               </value>
             </param>
             <param index="80">
               <value>
-                <![CDATA[Seaman / Engine-room worker]]>
+                <![CDATA[93]]>
               </value>
             </param>
             <param index="81">
               <value>
-                <![CDATA[93]]>
+                <![CDATA[Ocean liners]]>
               </value>
             </param>
             <param index="82">
               <value>
-                <![CDATA[Ocean liners]]>
+                <![CDATA[20/05/2017]]>
               </value>
             </param>
             <param index="83">
               <value>
-                <![CDATA[20/05/2017]]>
+                <![CDATA[Canada]]>
               </value>
             </param>
             <param index="84">
               <value>
-                <![CDATA[Canada]]>
+                <![CDATA[Yes]]>
               </value>
             </param>
             <param index="85">
               <value>
-                <![CDATA[Yes]]>
+                <![CDATA[Canara HSBC Life Insurance]]>
               </value>
             </param>
             <param index="86">
               <value>
-                <![CDATA[Canara HSBC Life Insurance]]>
+                <![CDATA[No]]>
               </value>
             </param>
             <param index="87">
               <value>
-                <![CDATA[No]]>
+                <![CDATA[Nothing]]>
               </value>
             </param>
             <param index="88">
               <value>
-                <![CDATA[Nothing]]>
+                <![CDATA[No]]>
               </value>
             </param>
             <param index="89">
               <value>
-                <![CDATA[No]]>
+                <![CDATA[Nothing]]>
               </value>
             </param>
             <param index="90">
               <value>
-                <![CDATA[Nothing]]>
+                <![CDATA[Aurangabad Maharashtra]]>
               </value>
             </param>
             <param index="91">
               <value>
-                <![CDATA[Aurangabad Maharashtra]]>
+                <![CDATA[e-KYC Aadhaar]]>
               </value>
             </param>
             <param index="92">
               <value>
-                <![CDATA[e-KYC Aadhaar]]>
+                <![CDATA[Auangabad]]>
               </value>
             </param>
             <param index="93">
               <value>
-                <![CDATA[Auangabad]]>
+                <![CDATA[No]]>
               </value>
             </param>
             <param index="94">
               <value>
-                <![CDATA[No]]>
+                <![CDATA[0123456791]]>
               </value>
             </param>
             <param index="95">
               <value>
-                <![CDATA[0123456791]]>
+                <![CDATA[NSDL]]>
               </value>
             </param>
             <param index="96">
               <value>
-                <![CDATA[NSDL]]>
+                <![CDATA[No]]>
               </value>
             </param>
             <param index="97">
               <value>
-                <![CDATA[No]]>
+                <![CDATA[HDFC Standard Life Insurance Co. Ltd]]>
               </value>
             </param>
             <param index="98">
               <value>
-                <![CDATA[HDFC Standard Life Insurance Co. Ltd]]>
+                <![CDATA[1700000]]>
               </value>
             </param>
             <param index="99">
               <value>
-                <![CDATA[1700000]]>
+                <![CDATA[Active]]>
               </value>
             </param>
             <param index="100">
               <value>
-                <![CDATA[Active]]>
+                <![CDATA[ganesh]]>
               </value>
             </param>
             <param index="101">
               <value>
-                <![CDATA[ganesh]]>
+                <![CDATA[mahure]]>
               </value>
             </param>
             <param index="102">
               <value>
-                <![CDATA[mahure]]>
+                <![CDATA[28/09/1992]]>
               </value>
             </param>
             <param index="103">
               <value>
-                <![CDATA[28/09/1992]]>
+                <![CDATA[Male]]>
               </value>
             </param>
             <param index="104">
               <value>
-                <![CDATA[Male]]>
+                <![CDATA[7845127845]]>
               </value>
             </param>
             <param index="105">
               <value>
-                <![CDATA[7845127845]]>
+                <![CDATA[ganesh.dsf@gmail.com]]>
               </value>
             </param>
             <param index="106">
               <value>
-                <![CDATA[ganesh.dsf@gmail.com]]>
+                <![CDATA[Brother]]>
               </value>
             </param>
             <param index="107">
               <value>
-                <![CDATA[Brother]]>
+                <![CDATA[1.0]]>
               </value>
             </param>
             <param index="108">
               <value>
-                <![CDATA[1.0]]>
+                <![CDATA[174]]>
               </value>
             </param>
             <param index="109">
               <value>
-                <![CDATA[174]]>
+                <![CDATA[50]]>
               </value>
             </param>
             <param index="110">
               <value>
-                <![CDATA[50]]>
+                <![CDATA[2]]>
               </value>
             </param>
             <param index="111">
@@ -577,28 +577,45 @@
                 <![CDATA[2]]>
               </value>
             </param>
-            <param index="112">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
+          <exception class="org.openqa.selenium.NoSuchWindowException">
             <message>
-              <![CDATA[Cannot locate element with text: Canara Bank
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=114.0.5735.110)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'INHA-PBPD7473', ip: '10.10.110.214', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
-Driver info: driver.version: unknown]]>
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.110, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\30007473\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50718}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 92750bedbe5b14618c1aa63da6dd9f7e
+*** Element info: {Using=xpath, value=//select[@id='guideContainer-rootPanel-panel_1080226036-panel_1173209043-panel_1712664342-panel_379119756-guidedropdownlist___widget']}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Cannot locate element with text: Canara Bank
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=114.0.5735.110)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'INHA-PBPD7473', ip: '10.10.110.214', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
-Driver info: driver.version: unknown
-at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:147)
-at com.Test.TC_ytp_Check.verify_ytp_journey(TC_ytp_Check.java:538)
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.110, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\30007473\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50718}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 92750bedbe5b14618c1aa63da6dd9f7e
+*** Element info: {Using=xpath, value=//select[@id='guideContainer-rootPanel-panel_1080226036-panel_1173209043-panel_1712664342-panel_379119756-guidedropdownlist___widget']}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at com.Test.TC_ytp_Check.verify_ytp_journey(TC_ytp_Check.java:429)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -629,11 +646,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_ytp_journey -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.Test.TC_ytp_Check@4f2b503c]" started-at="2023-06-13T18:10:37 IST" name="tearDown" finished-at="2023-06-13T18:10:37 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.Test.TC_ytp_Check@4f2b503c]" started-at="2023-06-15T17:03:47 IST" name="tearDown" finished-at="2023-06-15T17:03:47 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

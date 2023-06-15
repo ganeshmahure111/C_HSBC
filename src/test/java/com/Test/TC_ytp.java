@@ -28,7 +28,7 @@ import com.utility.Library;
 
 @Listeners(com.utility.Listner.class)
 
-public class TC_ytp_Check extends Base_Class {
+public class TC_ytp extends Base_Class {
 
 	@DataProvider(name = "excelData")
 	public Object[][] testExcel() throws IOException {
@@ -38,7 +38,7 @@ public class TC_ytp_Check extends Base_Class {
 		XSSFWorkbook wb = new XSSFWorkbook(fis);
 		XSSFSheet sheet = wb.getSheet("YTP");
 		int rowCount = sheet.getLastRowNum();
-		int colCount = 113;
+		int colCount = 112;
 		Object[][] dataObj = new Object[rowCount][colCount];
 
 		for (int i = 1; i <= rowCount; i++) {
@@ -64,7 +64,7 @@ public class TC_ytp_Check extends Base_Class {
 			String Life_cover, String Payout_Type, String Monthly_Income, String Proportion, String MIO,
 			// Rider
 			String CI_PPPChecked, String ci_ppp, String CI_PPChecked, String ADBChecked, String adb,
-			String ATPD_PPPChecked, String atpd_PPP, String ATPD_PPChecked, String TI_Checked, String TI,
+			String ATPD_PPPChecked, String atpd_PPP, String ATPD_PPChecked, String TI_Checked, 
 			String BYP_Checked, String Percentage, String CCB_Checked, String ccb,
 
 			String pan, String pincode, String NauturOfDuty, String payment,
@@ -311,8 +311,9 @@ public class TC_ytp_Check extends Base_Class {
 
 		// CI-PPP & CI-PP
 		if (CI_PPPChecked.equalsIgnoreCase("y") && CI_PPChecked.equalsIgnoreCase("n")) {
-//			Library.Custom_Click(ytp.cippp_select(), "CIPPP");
-			Library.Custom_SendKeys(ytp.cippp(), Keys.CONTROL + "a", null);
+		//	Library.Custom_SendKeys(ytp.cippp(), Keys.CONTROL + "a", null);
+			Library.custom_clear(ytp.cippp(), "CI-PPP Clear");
+
 			Thread.sleep(2000);
 			Library.Custom_SendKeys(ytp.cippp(), ci_ppp, "CIPPP - " + ci_ppp);
 			Thread.sleep(1000);
@@ -328,7 +329,9 @@ public class TC_ytp_Check extends Base_Class {
 
 		// ADB
 		if (ADBChecked.equalsIgnoreCase("y")) {
-			Library.Custom_SendKeys(ytp.adb(), Keys.CONTROL + "a", null);
+			Thread.sleep(2000);
+		//	Library.Custom_SendKeys(ytp.adb(), Keys.CONTROL + "a", null);
+			Library.custom_clear(ytp.adb(), "ADB");
 			Library.Custom_SendKeys(ytp.adb(), adb, "adb " + adb);
 			Thread.sleep(2000);
 			Library.Custom_Click(ytp.adb_select(), "ADB Select");
@@ -347,10 +350,11 @@ public class TC_ytp_Check extends Base_Class {
 			Thread.sleep(2000);
 			Library.Custom_Click(ytp.atpd_PP(), "ATPD-PP");
 			Thread.sleep(2000);
-			Library.custom_Screenshot_Rider_2(name);
+		//	Library.custom_Screenshot_Rider_2(name);
 		} else if (ATPD_PPChecked.equalsIgnoreCase("N") && ATPD_PPPChecked.equalsIgnoreCase("Y")) {
 			Thread.sleep(2000);
-			Library.Custom_SendKeys(ytp.atpd_PPP(), Keys.CONTROL + "a", null);
+		//	Library.Custom_SendKeys(ytp.atpd_PPP(), Keys.CONTROL + "a", null);
+			Library.custom_clear(ytp.atpd_PPP(), "ATPD-PPP");
 			Library.Custom_SendKeys(ytp.atpd_PPP(), atpd_PPP, "ATPD-PPP " + atpd_PPP);
 			Thread.sleep(2000);
 			Library.Custom_Click(ytp.atpd_PPP_select(), "ATPD-PPP ");
@@ -532,6 +536,7 @@ public class TC_ytp_Check extends Base_Class {
 
 		ytp_professional_detail ytp2 = PageFactory.initElements(driver, ytp_professional_detail.class);
 
+	
 		WebElement orgniazation = driver.findElement(By.xpath("//select[@id='guideContainer-rootPanel-panel-panel1598249905601-panel-panel-panel1597128853592-guidedropdownlist_1801249494___widget']"));
 		Select orgnizationlist = new Select(orgniazation);
 		Thread.sleep(2000);
@@ -592,7 +597,6 @@ public class TC_ytp_Check extends Base_Class {
 		}
 
 		// Rick Associate with occupation
-
 		if (rickAssocite.equalsIgnoreCase("Yes")) {
 			Library.Custom_Click(ytp2.rickAssociate_YES(), "Rick Associate with ocuupation - " + rickAssocite);
 			Library.Custom_SendKeys(ytp2.provideDetail_1(), Provide_Details_1,"Provide_Details_1 - " + Provide_Details_1);
@@ -752,7 +756,7 @@ public class TC_ytp_Check extends Base_Class {
 //		Library.Custom_Click(ytp3.panUpload(), "Pan Upload");
 //		Library.Custom_SendKeys(ytp3.select(), "C:\\Users\\30007473\\Videos\\C_HSBC_Life_Insurance\\Canara_HSBC_Life_Insurance\\Upload\\TC_01.png", "Upload");
 
-		Thread.sleep(8000);
+//		Thread.sleep(8000);
 		// driver.close();
 
 		log.info("=============== || TEST SUCCESSFULLY EXECUTE ||================");
