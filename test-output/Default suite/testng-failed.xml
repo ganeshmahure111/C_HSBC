@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.Test.TC_ytp_Check">
+      <class name="com.Test.TC_gfp">
         <methods>
-          <include name="verify_ytp_journey" invocation-numbers="0"/>
+          <include name="verify_gfp_journey" invocation-numbers="0"/>
           <include name="SetUp"/>
           <include name="tearDown"/>
           <include name="BS"/>
         </methods>
-      </class> <!-- com.Test.TC_ytp_Check -->
+      </class> <!-- com.Test.TC_gfp -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -52,7 +52,7 @@ public class TC_ytp extends Base_Class {
 		return dataObj;
 	}
 
-	@Test(dataProvider = "excelData")
+	@Test(dataProvider = "excelData" )
 	public void verify_ytp_journey(
 			// Basic Detail
 			String TC_ID, String First_Name, String Middle_Name, String Last_Name, String Email_ID,
@@ -102,19 +102,17 @@ public class TC_ytp extends Base_Class {
 	) throws Exception {
 
 //=======================================================================================================================================================
-//Lead Page 1	
+
+		//Lead Page 1	
 
 		log.info("================== || YOUNG TERM PLAN JOURNEY || ===================");
 		log.info("==================== ||   TEST CASE START || ====================");
 
-		System.out.println("The thread ID for Chrome is " + Thread.currentThread().getId());
-
+	
 		Robot r = new Robot();
 		for (int i = 0; i < 4; i++) {
-			r.keyPress(KeyEvent.VK_CONTROL);
-			r.keyPress(KeyEvent.VK_SUBTRACT);
-			r.keyRelease(KeyEvent.VK_SUBTRACT);
-			r.keyRelease(KeyEvent.VK_CONTROL);
+			r.keyPress(KeyEvent.VK_CONTROL); r.keyPress(KeyEvent.VK_SUBTRACT);
+			r.keyRelease(KeyEvent.VK_SUBTRACT);r.keyRelease(KeyEvent.VK_CONTROL);
 		}
 
 		ytp_journey_1 ytp = PageFactory.initElements(driver, ytp_journey_1.class);
@@ -125,6 +123,7 @@ public class TC_ytp extends Base_Class {
 		Library.Custom_SendKeys(ytp.getLast_Name(), Last_Name, Last_Name);
 		Library.Custom_SendKeys(ytp.getEmail_Id(), Email_ID, Email_ID);
 		Library.Custom_SendKeys(ytp.getMobile_number(), Mobile_Number, Mobile_Number);
+		
 		Library.Custom_Click(ytp.getContinue_1(), "Continue - 1");
 
 //=======================================================================================================================================================	
@@ -153,6 +152,7 @@ public class TC_ytp extends Base_Class {
 				"//select[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576-panel-guideradiobutton___widget']"));
 		Select sel = new Select(occupation);
 		sel.selectByVisibleText(occu);
+		
 		Library.custom_print("Click successfully " + occu);
 
 		WebElement education = driver.findElement(By.xpath(
@@ -535,9 +535,11 @@ public class TC_ytp extends Base_Class {
 //=============================================================================== Professional Detail =================================================================================
 
 		ytp_professional_detail ytp2 = PageFactory.initElements(driver, ytp_professional_detail.class);
-
-	
+		
+		Thread.sleep(2000);
 		WebElement orgniazation = driver.findElement(By.xpath("//select[@id='guideContainer-rootPanel-panel-panel1598249905601-panel-panel-panel1597128853592-guidedropdownlist_1801249494___widget']"));
+		
+		Thread.sleep(2000);
 		Select orgnizationlist = new Select(orgniazation);
 		Thread.sleep(2000);
 		orgnizationlist.selectByVisibleText(Orgnization_Name);
@@ -727,9 +729,9 @@ public class TC_ytp extends Base_Class {
 //==================================================================  Declaration and Authorization  ==============================================================================
 
 		Library.Custom_Click(ytp3.accept(), "Accept");
-
-//		Thread.sleep(20000);
-//		Library.Custom_Click(ytp3.verifyAndProceed(), "Verify & Proceed");
+		Library.Custom_SendKeys(ytp3.otp(), "123456", "OTP");
+		Library.Custom_Click(ytp3.verifyAndProceed(), "Verify & Proceed");
+		
 //		Thread.sleep(3000);
 //		Library.Custom_Click(ytp3.next(), "Next");
 //		Thread.sleep(3000);
@@ -738,13 +740,13 @@ public class TC_ytp extends Base_Class {
 //		Library.Custom_Click(ytp3.deselect(), "De Select");
 //		Thread.sleep(3000);
 //		Library.Custom_Click(ytp3.payNow(), "Pay Now");
-//		
-//		
+
+		
 //		driver.findElement(By.className("dropdown-control")).click();
-//		//Payment page 
+//		Payment page 
 //		
 //		Thread.sleep(20000);
-//		
+
 //		WebElement payStatus = driver.findElement(By.xpath("//select[@id='BankStatus']"));
 //		Select payStatusList = new Select (payStatus);
 //		payStatusList.selectByVisibleText("Success");
@@ -752,12 +754,12 @@ public class TC_ytp extends Base_Class {
 //		Library.Custom_Click(ytp3.sumbit(), "Submit");
 //		Library.Custom_Click(ytp3.proceedAndUploadDoc(), "Procceed TO Document Upload ");
 
-//	
+
 //		Library.Custom_Click(ytp3.panUpload(), "Pan Upload");
 //		Library.Custom_SendKeys(ytp3.select(), "C:\\Users\\30007473\\Videos\\C_HSBC_Life_Insurance\\Canara_HSBC_Life_Insurance\\Upload\\TC_01.png", "Upload");
 
-//		Thread.sleep(8000);
-		// driver.close();
+		
+//		 driver.close();
 
 		log.info("=============== || TEST SUCCESSFULLY EXECUTE ||================");
 

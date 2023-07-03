@@ -171,10 +171,13 @@ public class ytp_HealthForm {
 	
 //================================================================== Declaration and Authorization ==============================================================================
 
-	@FindBy (xpath = "//button[@id='guideContainer-rootPanel-panel-panel1598249999953-panel1596441461404-panel1602759057170-panel-guidebutton___widget']")
+	@FindBy (xpath = "//button[@id='guideContainer-rootPanel-panel-panel1598249905601_c-panel-panel_1425973399_cop-panel-guidebutton___widget']")
 	private WebElement accept;
 	
-	@FindBy (xpath = "//button[@id='guideContainer-rootPanel-panel-panel1598249999953-panel1596441461404-panel1602759057170-panel_1469188250-guidebutton_1067071897___widget']")
+	@FindBy (xpath = "//input[@id='guideContainer-rootPanel-panel-panel1598249905601_c-panel-panel_1425973399_cop-panel_1469188250-panel1598633241969-panel1597743178026-guidetextbox___widget']")
+	private WebElement otp;
+	
+	@FindBy (xpath = "//button[@id='guideContainer-rootPanel-panel-panel1598249905601_c-panel-panel_1425973399_cop-panel_1469188250-guidebutton_1067071897___widget']")
 	private WebElement verifyAndProceed;
 	
 	@FindBy (xpath = "//button[@id='guideContainer-rootPanel-panel-panel1598249999953-panel1596441461404-panel1605081727223-panel-panel-panel1593779195034-panel1593780270581-guidebutton_19836339___widget']")
@@ -195,6 +198,9 @@ public class ytp_HealthForm {
 		return accept;
 	}
 	
+	public WebElement otp() {
+		return otp;
+	}
 	public WebElement verifyAndProceed() {
 		return verifyAndProceed;
 	}

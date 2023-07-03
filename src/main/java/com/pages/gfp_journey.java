@@ -66,16 +66,17 @@ public class gfp_journey {
 		@FindBy (xpath = "//input[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593076844140-panel-guidetextbox___widget']")
 		private WebElement pindcode;
 		
-		@FindBy (xpath = "//button[@id='guideContainer-rootPanel-leadFormPanels-guidebutton___widget']")
-		private WebElement continue2;
-		
 		//================================================= GET METHOD ================================================\\
 
 		public WebElement male () {
 			return male;
 		}
 		
-		public WebElement getDOB() {
+		public WebElement female () {
+			return female;
+		}
+		
+		public WebElement DOB() {
 			return DOB;
 		}
 		
@@ -83,70 +84,33 @@ public class gfp_journey {
 			return pindcode;
 		}
 		
-		public WebElement getcontnue2 () {
-			return continue2;
-		}
-		
 //============================================================================  WEBPAGE 3  ===================================================================\\
-		
-		@FindBy (xpath="(//span[@class='select2-selection select2-selection--single'])[5]")
-		private WebElement educationLevel;
 
-		@FindBy (xpath = "//li[text()='Graduate']")
-		private WebElement graduation;
-		
-		@FindBy (xpath = "(//span[@class='select2-selection select2-selection--single'])[6]")    
-		private WebElement occupation;
-		
-		@FindBy (xpath="//span[@id='select2-guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576-panel-guideradiobutton___jqName-ap-container']")
-		private WebElement selfEmployee;
-		
-		@FindBy (xpath= "//label[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576-panel-guidedropdownlist_2084424641___label']")
-		private WebElement natureofDuty;
-		
-		@FindBy (xpath = "//span[@id='select2-guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576-panel-guidedropdownlist_2084424641___jqName-mw-container']")
-		private WebElement softwareEngineer;
-		
 		@FindBy (xpath = "(//input[@aria-label='Annual Income'])[1]")
 		private WebElement annualIncome;
 		
-		@FindBy (xpath = "//button[@id='guideContainer-rootPanel-leadFormPanels-guidebutton___widget']")
-		private WebElement continue3;
+		@FindBy (xpath = "//input[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576-panel-guidecheckbox__-1_widget']")
+		private WebElement empYes;
+		
+		@FindBy (xpath = "//input[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576-panel-guidecheckbox__-2_widget']")
+		private WebElement empNo;
+		
 		
 		//================================================= GET METHOD ================================================\\
-		
-		public WebElement geteducationLevel() {
-			return educationLevel;
-		}
-		
-		public WebElement getgraduation () {
-			return graduation;
-		}
-		
-		public WebElement getoccupation () {
-			return occupation;
-		}
-		
-		public WebElement getselfEmployee () {
-			return selfEmployee;
-		}
-		
-		public WebElement getnatureofDuty() {
-			return natureofDuty;
-		}
-		
-		public WebElement getsoftwareEngineer() {
-			return softwareEngineer;
-		}
 		
 		public WebElement getannualIncome () {
 			return annualIncome;
 		}
 		
-		public WebElement getcontinue3 () {
-			return continue3;
+		public WebElement empYes () {
+			return empYes;
 		}
 		
+		public WebElement empNo () {
+			return empNo;
+		}
+	
+	
 		//============================================================================  WEBPAGE 4  ===================================================================\\
 		
 		@FindBy(xpath="//input[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-guideradiobutton__-1_widget']")
@@ -160,7 +124,6 @@ public class gfp_journey {
 		
 		@FindBy (xpath ="//input[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-panel_443878357-panel_129979636-panel-guidenumericbox___widget']")
 		private WebElement amountInvest;
-		
 
 		@FindBy (xpath = "(//label[text()='Premium Payment Term'])[1]")
 		private WebElement premium_payment;
@@ -170,13 +133,9 @@ public class gfp_journey {
 		
 		@FindBy (xpath = "//li[@id='select2-guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-panel_443878357-panel_129979636-guidedropdownlist___jqName-5w-result-wsi0-7']")
 		private WebElement seven_year;
-		
-		@FindBy (xpath ="//button[@id='guideContainer-rootPanel-leadFormPanels-guidebutton___widget']")
-		private WebElement continue4;
-		
+			
 		@FindBy (xpath= "//*[@id=\"guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-panel_443878357-panel_129979636-guidedropdownlist__\"]/div[2]/span[1]")	 	
 		private WebElement premiumAmount;
-
 		
 		@FindBy (xpath = "//li[text()='5 Years']")
 		private WebElement five_Year;
@@ -214,10 +173,6 @@ public class gfp_journey {
 		
 		public WebElement getseven_year() {
 			return seven_year;
-		}
-		
-		public WebElement getcontinue4() {
-			return continue4;
 		}
 
 //============================================================================  WEBPAGE 5  ===================================================================\\

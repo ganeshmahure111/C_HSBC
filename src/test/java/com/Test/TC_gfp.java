@@ -35,15 +35,15 @@ public class TC_gfp  extends Base_Class {
 		XSSFWorkbook wb = new XSSFWorkbook(fis);
 		XSSFSheet sheet=wb.getSheet("GFP");
 		int rowCount=sheet.getLastRowNum();
-		
-		Object[][] dataObj= new Object[rowCount][18];
-		
-		for(int i=1;i<=rowCount;i++) {
-			Row row=sheet.getRow(i);
-			int colCount=9;
-			for(int j=0;j<colCount;j++) {
-				int rowNum=i;rowNum--;
-				dataObj[rowNum][j]=row.getCell(j).toString();
+		int colCount = 12;
+		Object[][] dataObj = new Object[rowCount][colCount];
+
+		for (int i = 1; i <= rowCount; i++) {
+			Row row = sheet.getRow(i);
+			for (int j = 0; j < colCount; j++) {
+				int rowNum = i;
+				rowNum--;
+				dataObj[rowNum][j] = row.getCell(j).toString();
 			
 			}
 		}
@@ -53,10 +53,11 @@ public class TC_gfp  extends Base_Class {
 	
 
 	@Test (dataProvider ="excelData")
-	public void verify_gfp_journey (String TC_ID,   String First_Name, String Middle_Name, String Last_Name, String Email_ID,String Mobile_Number, 
-									String Gender,  String Dob,        String consume_tobacco,      String occu,      String edu,     String annualIncome, 
-									String Emp,     String sum,        String policy_term, String pay,       String Payment_Term, 
-									String Life_cover) 
+	public void verify_gfp_journey (
+									// Basic Details
+									String TC_ID,   String First_Name, String Middle_Name, String Last_Name, String Email_ID, String Mobile_Number, 
+									String Gender,String Dob, String Education, String Occupation, String anuualIncome, String Employee
+) 
 	throws Exception {	
 		
 //=============================================================================================================================================================
@@ -72,16 +73,52 @@ public class TC_gfp  extends Base_Class {
 		
 		gfp_journey gfp=PageFactory.initElements(driver, gfp_journey.class);
 		
+//=============================================================================================================================================================
+		//=================== Lead Page 1 ===================
 		Library.Custom_SendKeys(gfp.getfirstName(), First_Name,"First_Name "+ First_Name );
 		Library.Custom_SendKeys(gfp.getmidddleName(), Middle_Name,"Middle_Name " +Middle_Name);
 		Library.Custom_SendKeys(gfp.getlastName(), Last_Name,"Last_Name "+ Last_Name);
 		Library.Custom_SendKeys(gfp.getemail(), Email_ID, "Email_ID " + Email_ID );
 		Library.Custom_SendKeys(gfp.getmobileNumber(), Mobile_Number, "Mobile_Number " + Mobile_Number );
 		Library.Custom_Click(gfp.getcontinuebtn(), "Continue - 1");
-
 		
 		
-	
+		//=================== Lead Page 2 ===================
+		//Gender
+		if (Gender.equalsIgnoreCase("Female")) {
+			Library.Custom_Click(gfp.female(), "Female");
+		} else if (Gender ==("Male")){
+			Library.Custom_Click(gfp.male(), "Male");
+		}
+		
+		Library.Custom_SendKeys(gfp.DOB(),Dob , Dob);
+		Thread.sleep(3000);
+		Library.Custom_SendKeys(gfp.getpincode(), "431003" , "Pincode " + "431003");
+		Thread.sleep(3000);
+		Library.Custom_Click(gfp.getcontinuebtn(), "Continue ");
+		Library.Custom_Click(gfp.getcontinuebtn(), "Continue - 2");
+		
+		WebElement edu = driver.findElement(By.xpath("//select[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576-panel-guidedropdownlist___widget']"));
+		Select educationList = new Select(edu);
+		Thread.sleep(3000);
+		educationList.selectByVisibleText(Education);
+		
+		WebElement occu = driver.findElement(By.xpath("//select[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576-panel-guideradiobutton___widget']"));
+		Select occupationList = new Select (occu);
+		Thread.sleep(3000);
+		occupationList.selectByVisibleText(Occupation);
+		
+		Library.Custom_SendKeys(gfp.getannualIncome(), anuualIncome, "Anuual Income " +anuualIncome );
+		
+		Thread.sleep(2000);
+		if (Employee.equalsIgnoreCase("Yes")) {
+			Library.Custom_Click(gfp.empYes(), "Employee " + Employee);
+		} else if (Employee.equalsIgnoreCase("No")) {
+			Library.Custom_Click(gfp.empNo(), "Employee " + Employee);
+		}
+		Thread.sleep(2000);
+		Library.Custom_Click(gfp.getcontinuebtn(), "Continue ");
+		
 																						
 		log.info("================== || TEST SUCCESSFULLY EXECUTE ||================");
 
