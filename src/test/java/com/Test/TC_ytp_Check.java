@@ -38,7 +38,7 @@ public class TC_ytp_Check  extends Base_Class {
 		String filepath=System.getProperty("user.dir")+"\\TestData\\Data.xlsx";
 		FileInputStream fis = new FileInputStream(filepath);
 		XSSFWorkbook wb = new XSSFWorkbook(fis);
-		XSSFSheet sheet=wb.getSheet("Test Cases");
+		XSSFSheet sheet=wb.getSheet("YTP");
 		int rowCount=sheet.getLastRowNum();
 		int colCount=113;
 		Object[][] dataObj= new Object[rowCount][colCount];
@@ -103,7 +103,6 @@ public class TC_ytp_Check  extends Base_Class {
 		log.info("================== || YOUNG TERM PLAN JOURNEY || ===================");
 		log.info("==================== ||   TEST CASE START || ====================");
 		
-		System.out.println("The thread ID for Chrome is "+ Thread.currentThread().getId());
 		
 		Robot r = new Robot();
 		for(int i=0; i<4; i++) {
@@ -230,6 +229,8 @@ public class TC_ytp_Check  extends Base_Class {
 		Library.custom_print_premium(ytp.total_premium(), rs2);
 		
 		String name = TC_ID;
+		
+		Thread.sleep(2000);
 		Library.custom_Screenshot_SumAssured(name);
 		Library.Custom_Click(ytp.getproceed_1(), "Proceed");
 		
@@ -271,13 +272,8 @@ public class TC_ytp_Check  extends Base_Class {
 			WebElement mio = driver.findElement(By.xpath("//select[@name='guideContainer-rootPanel-panel-panel1602840994127-panel-panel_1130119198-panel-guidedropdownlist_1075910158___jqName']"));
 			Select mioList = new Select (mio);
 			mioList.selectByVisibleText(MIO);
-			
-			Thread.sleep(3000);
-		}else if (Payout_Type.equals("Lumpsum")) {
-			// Nothing 
 		}
 		
-		// NEW UPDTE
 			if (Life_cover.equalsIgnoreCase("increasing")) {
 			Library.Custom_Click(ytp.getrecalculate_Quate_2(), "Recalculate Quate");
 			} else if (Life_cover.equalsIgnoreCase("level")) {
@@ -302,17 +298,17 @@ public class TC_ytp_Check  extends Base_Class {
 		Library.custom_print_premium(ytp.total_premium(), rs5);
 		
 		//CI-PPP & CI-PP	
-		if(CI_PPPChecked.equalsIgnoreCase("y")&& CI_PPChecked.equalsIgnoreCase("n")) {
+		if(CI_PPPChecked.equalsIgnoreCase("y") && CI_PPChecked.equalsIgnoreCase("n")) {
 //			Library.Custom_Click(ytp.cippp_select(), "CIPPP");
 			Library.Custom_SendKeys(ytp.cippp(),Keys.CONTROL + "a", null );
 			Thread.sleep(2000);
 			Library.Custom_SendKeys(ytp.cippp(), ci_ppp, "CIPPP - " + ci_ppp);
 			Thread.sleep(1000);
 			Library.Custom_Click(ytp.cippp_select(), "CIPPP");
-		}else if (CI_PPPChecked.equalsIgnoreCase("n")&& CI_PPChecked.equalsIgnoreCase("y")) {
+		}else if (CI_PPPChecked.equalsIgnoreCase("n") && CI_PPChecked.equalsIgnoreCase("y")) {
 			Thread.sleep(2000);
 			Library.Custom_Click(ytp.cipp(), "CIPP");		
-		}else if(CI_PPChecked.equalsIgnoreCase("y")&& CI_PPPChecked.equalsIgnoreCase("y")) {
+		}else if(CI_PPChecked.equalsIgnoreCase("y") && CI_PPPChecked.equalsIgnoreCase("y")) {
 			Library.custom_print("Both CI Variants cannot be selected, Ignoring the rider.");
 		} 
 		else {
@@ -329,9 +325,6 @@ public class TC_ytp_Check  extends Base_Class {
 		Thread.sleep(2000);
 		Library.custom_Screenshot_Rider_1(name);
 		
-//		act.click(ytp.arrow());
-//		Library.Custom_Click(ytp.arrow(), "arrow-2");
-//		Library.Custom_Click(ytp.arrow(), "Arrow");
 		
 		//ATPD-PP  &  ATPD-PPP
 		
@@ -339,8 +332,6 @@ public class TC_ytp_Check  extends Base_Class {
 			Library.Custom_Click(ytp.arrow(), "Arrow btn");
 		} 
 			
-			
-		//OK	
 		if(ATPD_PPChecked.equalsIgnoreCase("Y") && ATPD_PPPChecked.equalsIgnoreCase("N") ) {
 			Thread.sleep(2000);
 //			Library.Custom_Click(ytp.arrow(), "Arrow");
@@ -365,17 +356,18 @@ public class TC_ytp_Check  extends Base_Class {
 //			Library.Custom_Click(ytp.arrow(), "arrow-2");
 			Thread.sleep(2000);
 			Library.Custom_Click(ytp.terminalIllness_Select(), "TI Select");
-		}
-		
+		}	
 		
 		
 		// BYP & CCB 
-		if (BYP_Checked.equalsIgnoreCase("Y") || CCB_Checked.equalsIgnoreCase("Y") ) {
+		if (ATPD_PPChecked.equalsIgnoreCase("N") || ATPD_PPPChecked.equalsIgnoreCase("N")  || TI_Checked.equalsIgnoreCase("N")) {
 			Library.Custom_Click(ytp.arrow(), "Arrrow btn");
+			
+			if (BYP_Checked.equalsIgnoreCase("Y") || CCB_Checked.equalsIgnoreCase("Y") ) 
+			{   Library.Custom_Click(ytp.arrow(), "Arrrow btn");  }
+			
 		}
-		
-		
-		
+			
 		if (BYP_Checked.equalsIgnoreCase("Y")) {
 			Thread.sleep(3000);
 //			Library.Custom_Click(ytp.arrow(), "arrow-2");

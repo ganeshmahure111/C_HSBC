@@ -66,16 +66,17 @@ public class gfp_journey {
 		@FindBy (xpath = "//input[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593076844140-panel-guidetextbox___widget']")
 		private WebElement pindcode;
 		
-		@FindBy (xpath = "//button[@id='guideContainer-rootPanel-leadFormPanels-guidebutton___widget']")
-		private WebElement continue2;
-		
 		//================================================= GET METHOD ================================================\\
 
 		public WebElement male () {
 			return male;
 		}
 		
-		public WebElement getDOB() {
+		public WebElement female () {
+			return female;
+		}
+		
+		public WebElement DOB() {
 			return DOB;
 		}
 		
@@ -83,142 +84,148 @@ public class gfp_journey {
 			return pindcode;
 		}
 		
-		public WebElement getcontnue2 () {
-			return continue2;
-		}
-		
 //============================================================================  WEBPAGE 3  ===================================================================\\
-		
-		@FindBy (xpath="(//span[@class='select2-selection select2-selection--single'])[5]")
-		private WebElement educationLevel;
 
-		@FindBy (xpath = "//li[text()='Graduate']")
-		private WebElement graduation;
-		
-		@FindBy (xpath = "(//span[@class='select2-selection select2-selection--single'])[6]")    
-		private WebElement occupation;
-		
-		@FindBy (xpath="//span[@id='select2-guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576-panel-guideradiobutton___jqName-ap-container']")
-		private WebElement selfEmployee;
-		
-		@FindBy (xpath= "//label[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576-panel-guidedropdownlist_2084424641___label']")
-		private WebElement natureofDuty;
-		
-		@FindBy (xpath = "//span[@id='select2-guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576-panel-guidedropdownlist_2084424641___jqName-mw-container']")
-		private WebElement softwareEngineer;
-		
 		@FindBy (xpath = "(//input[@aria-label='Annual Income'])[1]")
 		private WebElement annualIncome;
 		
-		@FindBy (xpath = "//button[@id='guideContainer-rootPanel-leadFormPanels-guidebutton___widget']")
-		private WebElement continue3;
+		@FindBy (xpath = "(//div[@class='guideRadioButtonItem afRadioButtonItem guideFieldHorizontalAlignment poChoiceEmployee choice-radio-field lead-radio-container choiceEmployee'])[1]")
+		private WebElement empYes;
+		
+		@FindBy (xpath = "(//div[@class='guideRadioButtonItem afRadioButtonItem guideFieldHorizontalAlignment poChoiceEmployee choice-radio-field lead-radio-container choiceEmployee'])[2]")
+		private WebElement empNo;
+		
 		
 		//================================================= GET METHOD ================================================\\
-		
-		public WebElement geteducationLevel() {
-			return educationLevel;
-		}
-		
-		public WebElement getgraduation () {
-			return graduation;
-		}
-		
-		public WebElement getoccupation () {
-			return occupation;
-		}
-		
-		public WebElement getselfEmployee () {
-			return selfEmployee;
-		}
-		
-		public WebElement getnatureofDuty() {
-			return natureofDuty;
-		}
-		
-		public WebElement getsoftwareEngineer() {
-			return softwareEngineer;
-		}
 		
 		public WebElement getannualIncome () {
 			return annualIncome;
 		}
 		
-		public WebElement getcontinue3 () {
-			return continue3;
+		public WebElement empYes () {
+			return empYes;
 		}
 		
+		public WebElement empNo () {
+			return empNo;
+		}
+	
+	
 		//============================================================================  WEBPAGE 4  ===================================================================\\
 		
-		@FindBy(xpath="//input[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-guideradiobutton__-1_widget']")
+		//======== Invest For =========== 
+
+		@FindBy(xpath  = "//input[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-guideradiobutton__-1_widget']")
 		private WebElement self;
 		
 		@FindBy (xpath = "//input[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-guideradiobutton__-2_widget']")
 		private WebElement spouse;
 		
-		@FindBy (xpath = "//input[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-panel_443878357-panel_129979636-guideradiobutton__-4_widget']")
-		private WebElement month;
+		@FindBy (xpath = "//input[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-guideradiobutton__-2_widget']")
+		private WebElement child;
 		
-		@FindBy (xpath ="//input[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-panel_443878357-panel_129979636-panel-guidenumericbox___widget']")
-		private WebElement amountInvest;
+		@FindBy (xpath = "//input[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-guideradiobutton__-2_widget']")
+		private WebElement grandChild;
 		
-
-		@FindBy (xpath = "(//label[text()='Premium Payment Term'])[1]")
-		private WebElement premium_payment;
+		// ========= Name ===========
 		
-		@FindBy (xpath = "//li[text()='5 Years']")
-		private WebElement Five_Year;
+		@FindBy (xpath = "//input[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-panel-guidetextbox___widget']")
+		private WebElement spouseFirstName;
 		
-		@FindBy (xpath = "//li[@id='select2-guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-panel_443878357-panel_129979636-guidedropdownlist___jqName-5w-result-wsi0-7']")
-		private WebElement seven_year;
+		@FindBy (xpath = "//input[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-panel-guidetextbox_copy___widget']")
+		private WebElement spouseMiddleName;
 		
-		@FindBy (xpath ="//button[@id='guideContainer-rootPanel-leadFormPanels-guidebutton___widget']")
-		private WebElement continue4;
+		@FindBy (xpath = "//input[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-panel-guidetextbox_copy_11888536___widget']")
+		private WebElement spouseLastName;
 		
-		@FindBy (xpath= "//*[@id=\"guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-panel_443878357-panel_129979636-guidedropdownlist__\"]/div[2]/span[1]")	 	
-		private WebElement premiumAmount;
-
+		// ======= Spouse Detail =======
 		
-		@FindBy (xpath = "//li[text()='5 Years']")
-		private WebElement five_Year;
+		@FindBy (xpath = "//input[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-panel_1051985890-panel_1139186743-guideradiobutton__-1_widget']")
+		private WebElement spouseMale;
 		
-		@FindBy (xpath ="//button[@id='guideContainer-rootPanel-leadFormPanels-guidebutton___widget']")
-		private WebElement contine4;
+		@FindBy (xpath = "//input[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-panel_1051985890-panel_1139186743-guideradiobutton__-2_widget']")
+		private WebElement spouseFemale;
+		
+		@FindBy (xpath = "//input[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-panel_1051985890-panel_1139186743-guideradiobutton__-1_widget']")
+		private WebElement spouseTransgender;
+		
+		@FindBy (xpath = "//input[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-panel_1051985890-panel_1139186743-guidedatepicker___widget']")
+		private WebElement spouseDob;
+		
+		@FindBy (xpath = "//input[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-panel_1051985890-panel_1139186743-guideemail___widget']")
+		private WebElement spouseEmailId;
+		
+		@FindBy (xpath = "//input[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-panel_1051985890-panel_1139186743-panel-guidenumericbox___widget']")
+		private WebElement spouseMobileNumber;
+		
+		
+		
+		// Premium Payment Frequency
+		
+	
 		
 //		
 		//================================================= GET METHOD ================================================\\
 		
-		public WebElement getself () {
+		public WebElement self () {
 			return self;
 		}
 		
-		public WebElement getspouse () {
+		public WebElement spouse () {
 			return spouse;
 		}
 		
-		public WebElement getmonth () {
-			return month;
+		public WebElement child () {
+			return child;
 		}
 		
-		public WebElement getamountInvest () {
-			return amountInvest;
+		public WebElement grandChild () {
+			return grandChild;
 		}
 		
-
-		public WebElement getpremium_payment() {
-			return premium_payment;
+		//===== Name ======
+		
+		public WebElement spouseFirstName () {
+			return spouseFirstName;
 		}
 		
-		public WebElement get_Five_Year() {
-			return Five_Year;
+		public WebElement spouseMiddleName () {
+			return spouseMiddleName;
 		}
 		
-		public WebElement getseven_year() {
-			return seven_year;
+		public WebElement spouseLastName () {
+			return spouseLastName;
 		}
 		
-		public WebElement getcontinue4() {
-			return continue4;
+		//======= Spouse Detail =======
+		
+		public WebElement spouseMale () {
+			return spouseMale;
 		}
+		
+		public WebElement spouseFemale () {
+			return spouseFemale;
+		}
+		
+		public WebElement spouseTransgender () {
+			return spouseTransgender;
+		}
+		
+		public WebElement spouseDob () {
+			return spouseDob;
+		}
+		
+		public WebElement spouseEmailId () {
+			return spouseEmailId;
+		}
+		
+		public WebElement spouseMobileNumber () {
+			return spouseMobileNumber;
+		}
+		
+		
+		//========== PPF =============
+		
 
 //============================================================================  WEBPAGE 5  ===================================================================\\
 
@@ -231,17 +238,6 @@ public class gfp_journey {
 		//================================================= GET METHOD ================================================\\
 
 
-		public WebElement getpremiumAmount() {
-			return premiumAmount;
-		}
-		
-		public WebElement getfive_Year() {
-			return five_Year;
-		}
-		
-		public WebElement getcontine4() {
-			return contine4;
-		}
 		
 //============================================================================  WEBPAGE 4  ===================================================================\\
 

@@ -36,11 +36,11 @@ public class Base_Class {
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			
-		//	driver.get(config.gfp_Url());
-	    driver.get(config.ytp_Url());
+			  driver.get(config.gfp_Url());
+			//driver.get(config.ytp_Url());
 		 
 		 driver.manage().window().maximize();  
-		 log = LogManager.getLogger("CANARA_HSBC_Life_Insurance");
+		 log = LogManager.getLogger("C_HSBC");
 		 driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
 	}
 
