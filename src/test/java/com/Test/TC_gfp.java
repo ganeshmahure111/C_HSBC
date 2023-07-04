@@ -35,7 +35,7 @@ public class TC_gfp  extends Base_Class {
 		XSSFWorkbook wb = new XSSFWorkbook(fis);
 		XSSFSheet sheet=wb.getSheet("GFP");
 		int rowCount=sheet.getLastRowNum();
-		int colCount = 12;
+		int colCount = 22;
 		Object[][] dataObj = new Object[rowCount][colCount];
 
 		for (int i = 1; i <= rowCount; i++) {
@@ -56,7 +56,12 @@ public class TC_gfp  extends Base_Class {
 	public void verify_gfp_journey (
 									// Basic Details
 									String TC_ID,   String First_Name, String Middle_Name, String Last_Name, String Email_ID, String Mobile_Number, 
-									String Gender,String Dob, String Education, String Occupation, String anuualIncome, String Employee
+									String Gender,String Dob, String Education, String Occupation, String anuualIncome, String Employee,
+									
+									// Invest For 
+									String Invest_For , String InvestForGender , String Gender_DOB, String Gender_Education , String Gender_Ocupation , String Gender_Annual_Income, 
+									String PPF , String Amount_Invest , String PPT , String Benefit_Type
+									
 ) 
 	throws Exception {	
 		
@@ -88,14 +93,14 @@ public class TC_gfp  extends Base_Class {
 		if (Gender.equalsIgnoreCase("Female")) {
 			Library.Custom_Click(gfp.female(), "Female");
 		} else if (Gender ==("Male")){
-			Library.Custom_Click(gfp.male(), "Male");
+			Library.custom_print("Click Successfully " + Gender);
 		}
 		
 		Library.Custom_SendKeys(gfp.DOB(),Dob , Dob);
 		Thread.sleep(3000);
 		Library.Custom_SendKeys(gfp.getpincode(), "431003" , "Pincode " + "431003");
 		Thread.sleep(3000);
-		Library.Custom_Click(gfp.getcontinuebtn(), "Continue ");
+	//	Library.Custom_Click(gfp.getcontinuebtn(), "Continue ");
 		Library.Custom_Click(gfp.getcontinuebtn(), "Continue - 2");
 		
 		WebElement edu = driver.findElement(By.xpath("//select[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576-panel-guidedropdownlist___widget']"));
@@ -108,21 +113,183 @@ public class TC_gfp  extends Base_Class {
 		Thread.sleep(3000);
 		occupationList.selectByVisibleText(Occupation);
 		
-		Library.Custom_SendKeys(gfp.getannualIncome(), anuualIncome, "Anuual Income " +anuualIncome );
+		Library.Custom_SendKeys(gfp.getannualIncome(), anuualIncome, "Anuual Income " + anuualIncome );
 		
-		Thread.sleep(2000);
+		
 		if (Employee.equalsIgnoreCase("Yes")) {
 			Library.Custom_Click(gfp.empYes(), "Employee " + Employee);
 		} else if (Employee.equalsIgnoreCase("No")) {
-			Library.Custom_Click(gfp.empNo(), "Employee " + Employee);
+			Library.custom_print("Click Successfully " + Employee);
 		}
-		Thread.sleep(2000);
+		
+	
 		Library.Custom_Click(gfp.getcontinuebtn(), "Continue ");
 		
-																						
+		//=================== Lead Page 3 ===================
+		
+		if (Invest_For.equalsIgnoreCase("Spouse")) {
+			Library.Custom_Click(gfp.spouse(), "Spouse");
+			Library.Custom_SendKeys(gfp.spouseFirstName(), "FirstName", "First Name");
+			Library.Custom_SendKeys(gfp.spouseMiddleName(), "MiddleName", "Middle Name");
+			Library.Custom_SendKeys(gfp.spouseLastName(), "LastName", "Last Name");
+			Library.Custom_Click(gfp.getcontinuebtn(), "Continue");
+			
+			if (InvestForGender.equalsIgnoreCase("Male")) {
+				Library.Custom_Click(gfp.spouseMale(), "InvestForGender - " + "Male");
+			} else if (InvestForGender.equalsIgnoreCase("Female")) {
+				Library.Custom_Click(gfp.spouseFemale(), "InvestForGender - " + "Female");
+			} else if (InvestForGender.equalsIgnoreCase("Transgender")) {
+				Library.Custom_Click(gfp.spouseTransgender(), "InvestForGender - " + "Transgender");
+			}
+
+			Library.Custom_SendKeys(gfp.spouseDob(), Gender_DOB , "DOB " + Gender_DOB);
+			Library.Custom_SendKeys(gfp.spouseEmailId(), "abc.12@gmail.com", "Gender Email - abc.12@gmail.com ");
+			Library.Custom_SendKeys(gfp.spouseMobileNumber(), "9158949494", "Gender MOB - 9158949494");
+			Library.Custom_Click(gfp.getcontinuebtn(), "Conitinue ");
+			Library.Custom_SendKeys(gfp.spousePincode(), "431003", "Pincode - 431003");
+			
+			WebElement education = driver.findElement(By.xpath("//select[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-panel_1051985890-panel_1825705384-guidedropdownlist_99___widget']"));
+			Select genderEducationList = new Select(education);
+			genderEducationList.selectByVisibleText(Gender_Education);
+			
+			WebElement ocupation = driver.findElement(By.xpath("//select[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-panel_1051985890-panel_514457067-guideradiobutton_869___widget']"));
+			Select ocupationList = new Select(ocupation);
+			ocupationList.selectByVisibleText(Gender_Ocupation);
+			
+			Library.Custom_SendKeys(gfp.spouseAnnualIncome(), Gender_Annual_Income, "Gender Annual Income " + Gender_Annual_Income);
+			Library.Custom_Click(gfp.getcontinuebtn(), "Conitinue ");
+			
+		} else if (Invest_For.equalsIgnoreCase("Child")) {
+			Library.Custom_Click(gfp.child(), "Child ");
+			Library.Custom_SendKeys(gfp.spouseFirstName(), "FirstName", "First Name");
+			Library.Custom_SendKeys(gfp.spouseMiddleName(), "MiddleName", "Middle Name");
+			Library.Custom_SendKeys(gfp.spouseLastName(), "LastName", "Last Name");
+			Library.Custom_Click(gfp.getcontinuebtn(), "Continue");
+			
+			if (InvestForGender.equalsIgnoreCase("Male")) {
+				Library.Custom_Click(gfp.spouseMale(), "InvestForGender - " + "Male");
+			} else if (InvestForGender.equalsIgnoreCase("Female")) {
+				Library.Custom_Click(gfp.spouseFemale(), "InvestForGender - " + "Female");
+			} else if (InvestForGender.equalsIgnoreCase("Transgender")) {
+				Library.Custom_Click(gfp.spouseTransgender(), "InvestForGender - " + "Transgender");
+			}
+
+			Library.Custom_SendKeys(gfp.spouseDob(), Gender_DOB , "DOB " + Gender_DOB);
+			Library.Custom_SendKeys(gfp.spouseEmailId(), "abc.12@gmail.com", "Gender Email - abc.12@gmail.com ");
+			Library.Custom_SendKeys(gfp.spouseMobileNumber(), "9158949494", "Gender MOB - 9158949494");
+			Library.Custom_Click(gfp.getcontinuebtn(), "Conitinue ");
+			Library.Custom_SendKeys(gfp.spousePincode(), "431003", "Pincode - 431003");
+			
+			WebElement education = driver.findElement(By.xpath("//select[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-panel_1051985890-panel_1825705384-guidedropdownlist_99___widget']"));
+			Select genderEducationList = new Select(education);
+			genderEducationList.selectByVisibleText(Gender_Education);
+			
+			WebElement ocupation = driver.findElement(By.xpath("//select[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-panel_1051985890-panel_514457067-guideradiobutton_869___widget']"));
+			Select ocupationList = new Select(ocupation);
+			ocupationList.selectByVisibleText(Gender_Ocupation);
+			
+			Library.Custom_SendKeys(gfp.spouseAnnualIncome(), Gender_Annual_Income, "Gender Annual Income " + Gender_Annual_Income);
+			Library.Custom_Click(gfp.getcontinuebtn(), "Conitinue ");
+			
+		} else if (Invest_For.equalsIgnoreCase("Grandchild")) {
+			Library.Custom_Click(gfp.grandChild(), "Grandchild ");
+			Library.Custom_SendKeys(gfp.spouseFirstName(), "FirstName", "First Name");
+			Library.Custom_SendKeys(gfp.spouseMiddleName(), "MiddleName", "Middle Name");
+			Library.Custom_SendKeys(gfp.spouseLastName(), "LastName", "Last Name");
+			Library.Custom_Click(gfp.getcontinuebtn(), "Continue");
+			
+			if (InvestForGender.equalsIgnoreCase("Male")) {
+				Library.Custom_Click(gfp.spouseMale(), "InvestForGender - " + "Male");
+			} else if (InvestForGender.equalsIgnoreCase("Female")) {
+				Library.Custom_Click(gfp.spouseFemale(), "InvestForGender - " + "Female");
+			} else if (InvestForGender.equalsIgnoreCase("Transgender")) {
+				Library.Custom_Click(gfp.spouseTransgender(), "InvestForGender - " + "Transgender");
+			}
+
+			Library.Custom_SendKeys(gfp.spouseDob(), Gender_DOB , "DOB " + Gender_DOB);
+			Library.Custom_SendKeys(gfp.spouseEmailId(), "abc.12@gmail.com", "Gender Email - abc.12@gmail.com ");
+			Library.Custom_SendKeys(gfp.spouseMobileNumber(), "9158949494", "Gender MOB - 9158949494");
+			Library.Custom_Click(gfp.getcontinuebtn(), "Conitinue ");
+			Library.Custom_SendKeys(gfp.spousePincode(), "431003", "Pincode - 431003");
+			
+			WebElement education = driver.findElement(By.xpath("//select[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-panel_1051985890-panel_1825705384-guidedropdownlist_99___widget']"));
+			Select genderEducationList = new Select(education);
+			genderEducationList.selectByVisibleText(Gender_Education);
+			
+			WebElement ocupation = driver.findElement(By.xpath("//select[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-panel_1051985890-panel_514457067-guideradiobutton_869___widget']"));
+			Select ocupationList = new Select(ocupation);
+			ocupationList.selectByVisibleText(Gender_Ocupation);
+			
+			Library.Custom_SendKeys(gfp.spouseAnnualIncome(), Gender_Annual_Income, "Gender Annual Income " + Gender_Annual_Income);
+			Library.Custom_Click(gfp.getcontinuebtn(), "Conitinue ");
+			
+		} else if (Invest_For.equalsIgnoreCase("Self")) {
+			Library.custom_print("Click Successfully " + Invest_For);
+		}
+							
+		//===== PPF =====
+		
+		if (PPF.equalsIgnoreCase("Half_Yearly")) {
+			Library.Custom_Click(gfp.halfYearly(), "Half-Yearly");
+		} else if (PPF.equalsIgnoreCase("Quarterly")) {
+			Library.Custom_Click(gfp.quarterly(), "Quarterly");
+		} else if (PPF.equalsIgnoreCase("Monthly")) {
+			Library.Custom_Click(gfp.monthly(), "Monthly");
+		} else if (PPF.equalsIgnoreCase("Single")) {
+			Library.Custom_Click(gfp.single(), "Single");
+		} else if (PPF.equalsIgnoreCase("Annually")) {
+			Library.custom_print("Click Successfully " + PPF);
+		}
+		
+		Library.Custom_SendKeys(gfp.amountInvest(), Amount_Invest, "Amount_Invest -" + Amount_Invest );
+		
+		WebElement ppt = driver.findElement(By.xpath("//select[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-panel_443878357-panel_129979636-guidedropdownlist___widget']"));
+		Select pptList = new Select(ppt);
+		pptList.selectByVisibleText(PPT);
+		
+		Library.Custom_Click(gfp.getcontinuebtn(), "Continue");
+		
+		//=================== Lead Page 4 ===================
+		
+		if (Benefit_Type.equalsIgnoreCase("Regular Income")) {
+			Library.Custom_Click(gfp.regularIncome(), "Regular Income");
+		} else if(Benefit_Type.equalsIgnoreCase("Lumpsum(Endowment)")) {
+			Library.custom_print("Click Successfully " + Benefit_Type);
+		}
+		
+		Library.Custom_Click(gfp.getQuote(), "GET QUOTE");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		log.info("================== || TEST SUCCESSFULLY EXECUTE ||================");
 
-
+		driver.close();
 		
 		
 

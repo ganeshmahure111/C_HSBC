@@ -5,7 +5,7 @@
     <classes>
       <class name="com.Test.TC_gfp">
         <methods>
-          <include name="verify_gfp_journey" invocation-numbers="0"/>
+          <include name="verify_gfp_journey"/>
           <include name="SetUp"/>
           <include name="tearDown"/>
           <include name="BS"/>
