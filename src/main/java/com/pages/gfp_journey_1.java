@@ -3,7 +3,7 @@ package com.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class gfp_journey {
+public class gfp_journey_1 {
 	
 	//============================================================================  WEBPAGE 1  ===================================================================\\
 
@@ -312,21 +312,23 @@ public class gfp_journey {
 	@FindBy (xpath = "//div[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel_2030159564-panel-panel1686751506034-panel_776881033-panel1594291407024-panel-panel1594291495754_c_1031117886__']")
 	private WebElement endowmentBenefit_Second;
 	
+	@FindBy (xpath = "//label[text()='Payor Premium Protection Cover']")
+	private WebElement ebPPPC_check;
+	
 	// Income Benefit
 	
 	@FindBy (xpath = "//li[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel_2030159564-panel-panel1686751506034-panel_776881033-panel1602832081639___guide-item-nav']")
 	private WebElement incomeBenefit;
 	
+	@FindBy (xpath = "//div[@id='guideContainer-rootPanel-panel-panel1602840994127-panel-panel_2030159564-panel-panel1686751506034-panel_776881033-panel1602832081639-panel-panel1594291495754_c_827377756__']")
+	private WebElement incomeBenefit_Second;
+	
+	@FindBy (xpath = "//label[text()='Payor Premium Protection Cover.']")
+	private WebElement ibPPPC_check;
 	
 	
 	@FindBy (xpath = "//button[@id='guideContainer-rootPanel-panel-panel1602840994127-panel_495801424-panel1606803587832-guidebutton___widget']")
 	private WebElement proceed;
-	
-	
-	
-	
-	
-	
 	
 	
 	
@@ -339,25 +341,44 @@ public class gfp_journey {
 		return endowmentBenefit_Second;
 	}
 	
+	public WebElement ebPPPC_check () {
+		return ebPPPC_check;
+	}
+	
+	
 	public WebElement incomeBenefit () {
 		return incomeBenefit;
+	}
+	
+	public WebElement incomeBenefit_Second () {
+		return incomeBenefit_Second;
+	}
+	
+	
+	public WebElement ibPPPC_check () {
+		return ibPPPC_check;
 	}
 	
 	public WebElement proceed () {
 		return proceed;
 	}
 	
+//============================================================================  WEBPAGE 7  ===================================================================\\
+
+	@FindBy (xpath = "//input[@id='guideContainer-rootPanel-panel_1013852821-panel-panel1593779195034-panel1593780270581-panel_1307358209-panel_copy-guidecheckbox___1_widget']")
+	private WebElement paylater;
 	
+	@FindBy (xpath = "//button[@id='guideContainer-rootPanel-panel_1013852821-panel-panel1593779195034-panel1593780270581-guidebutton_19836339___widget']")
+	private WebElement next;
+	//================================================= GET METHOD ================================================\\
+
+	public WebElement paylater () {
+		return paylater;
+	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public WebElement next () {
+		return next;
+	}
 	
 	
 }

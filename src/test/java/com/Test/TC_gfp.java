@@ -19,7 +19,9 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import com.pages.gfp_journey;
+import com.pages.gfp_journey_1;
+import com.pages.gfp_journey_proposal_2;
+
 
 import com.utility.Base_Class;
 import com.utility.Library;
@@ -35,7 +37,7 @@ public class TC_gfp  extends Base_Class {
 		XSSFWorkbook wb = new XSSFWorkbook(fis);
 		XSSFSheet sheet=wb.getSheet("GFP");
 		int rowCount=sheet.getLastRowNum();
-		int colCount = 22;
+		int colCount = 27;
 		Object[][] dataObj = new Object[rowCount][colCount];
 
 		for (int i = 1; i <= rowCount; i++) {
@@ -43,14 +45,11 @@ public class TC_gfp  extends Base_Class {
 			for (int j = 0; j < colCount; j++) {
 				int rowNum = i;
 				rowNum--;
-				dataObj[rowNum][j] = row.getCell(j).toString();
-			
+				dataObj[rowNum][j] = row.getCell(j).toString();	
 			}
 		}
 		return dataObj;
 	}
-	
-	
 
 	@Test (dataProvider ="excelData")
 	public void verify_gfp_journey (
@@ -59,10 +58,17 @@ public class TC_gfp  extends Base_Class {
 									String Gender,String Dob, String Education, String Occupation, String anuualIncome, String Employee,
 									
 									// Invest For 
-									String Invest_For , String InvestForGender , String Gender_DOB, String Gender_Education , String Gender_Ocupation , String Gender_Annual_Income, 
-									String PPF , String Amount_Invest , String PPT , String Benefit_Type
+									String Invest_For , String InvestForGender , String Gender_DOB, String Gender_Education , String Gender_Ocupation , 
+									String Gender_Annual_Income, String PPF , String Amount_Invest , String PPT , String Benefit_Type ,
+								
+									// Benefit 
+									String Endowment_Benifit , String EB_PPPC , String Income_Benefit , String IB_PPPC,
 									
-) 
+									//Personnel Info
+									String Maritial_Status
+									
+									
+									) 
 	throws Exception {	
 		
 //=============================================================================================================================================================
@@ -76,7 +82,7 @@ public class TC_gfp  extends Base_Class {
 		r.keyPress(KeyEvent.VK_CONTROL);r.keyPress(KeyEvent.VK_SUBTRACT);r.keyRelease(KeyEvent.VK_SUBTRACT);r.keyRelease(KeyEvent.VK_CONTROL);
 		}
 		
-		gfp_journey gfp=PageFactory.initElements(driver, gfp_journey.class);
+		gfp_journey_1 gfp=PageFactory.initElements(driver, gfp_journey_1.class);
 		
 //=============================================================================================================================================================
 		//=================== Lead Page 1 ===================
@@ -259,37 +265,79 @@ public class TC_gfp  extends Base_Class {
 		
 		Library.Custom_Click(gfp.getQuote(), "GET QUOTE");
 		
+	//==================================================================================================================================================================================	
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		
+		// Endowment Benefit
+		if (Endowment_Benifit.equalsIgnoreCase("Second Plan")) {
+			Library.Custom_Click(gfp.endowmentBenefit_Second(), "Endowment Benefit ");
+		} 
+		
+		js.executeScript("window.scrollBy(0,250)", "");
+		Thread.sleep(2000);
+		
+		if (EB_PPPC.equalsIgnoreCase("Y")) {
+			Library.Custom_Click(gfp.ebPPPC_check(), "EB PPPC Checked");
+		}
+		
+		// Income Benefit
+		if (Income_Benefit.equalsIgnoreCase("Second Plan")) {
+			Library.Custom_Click(gfp.incomeBenefit(), "Income Benefit");
+			Library.Custom_Click(gfp.incomeBenefit_Second(), "Income Benefit Second");
+		}
+		
+		js.executeScript("window.scrollBy(0,250)", "");
+		Thread.sleep(2000);
+		if (IB_PPPC.equalsIgnoreCase("Y")) {
+			Library.Custom_Click(gfp.ibPPPC_check(), "IB PPPC Checked");
+		}
+	
+		Library.Custom_Click(gfp.proceed(), "Proceed ");
 		
 		
+		Library.Custom_Click(gfp.paylater(), "Pay Later");
 		
+		Library.Custom_Click(gfp.next(), "NEXT");
 		
+//============================================================================ Payment Page ===================================================================\\
+
+		gfp_journey_proposal_2  gfp2 =PageFactory.initElements(driver, gfp_journey_proposal_2.class);
 		
+		Library.Custom_SendKeys(gfp2.pancard(), "ERLPP1010A" , "Pancard");
+		Library.Custom_SendKeys(gfp2.fatherName(), "ABC", "Father Name");
+		Library.Custom_SendKeys(gfp2.lastName(), "xyz", "Last Name");
+		Library.Custom_SendKeys(gfp2.motherName(), "ABC", "Mother Name");
+		Library.Custom_SendKeys(gfp2.lastName1(), "xyz", "last Name");
 		
+		// Martial Status
+		if (Maritial_Status.equalsIgnoreCase("Single")) {
+			Library.Custom_Click(gfp2.single(), "Single");
+		} else if (Maritial_Status.equalsIgnoreCase("Married")) {
+			Library.Custom_Click(gfp2.married(), "Married");
+		} else if (Maritial_Status.equalsIgnoreCase("Divorced")) {
+			Library.Custom_Click(gfp2.divorced(), "Divorced");
+		} else if (Maritial_Status.equalsIgnoreCase("Widowed")) {
+			Library.Custom_Click(gfp2.divorced(), "Widowed");
+		}
 		
+		Library.Custom_SendKeys(gfp2.mobileNumber(), "7874514412", "Mobile Number");
 		
+		WebElement ageProof = driver.findElement(By.xpath("//select[@id='guideContainer-rootPanel-panel-panel1598249905601-panel-panel1593583406033-panel_525613555_copy-guidetextbox_copy_10-guidedropdownlist___widget']"));
+		Select ageProofList = new Select(ageProof);
+		ageProofList.selectByVisibleText("PAN card");
 		
+		WebElement idProof = driver.findElement(By.xpath("//select[@id='guideContainer-rootPanel-panel-panel1598249905601-panel-panel1593583406033-panel_525613555_copy-panel-guidedropdownlist_12___widget']"));
+		Select idProofList = new Select(idProof);
+		idProofList.selectByVisibleText("Ration Card");
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		Library.Custom_Click(gfp2.proceed(), "Proceed");
 		
 		
 		
 		
 		log.info("================== || TEST SUCCESSFULLY EXECUTE ||================");
 
-		driver.close();
+	
 		
 		
 
