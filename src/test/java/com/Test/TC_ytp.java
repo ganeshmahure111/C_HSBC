@@ -287,7 +287,7 @@ public class TC_ytp extends Base_Class {
 			// Nothing
 		}
 
-		// NEW UPDTE
+		
 		if (Life_cover.equalsIgnoreCase("increasing")) {
 			Library.Custom_Click(ytp.getrecalculate_Quate_2(), "Recalculate Quate");
 		} else if (Life_cover.equalsIgnoreCase("level")) {

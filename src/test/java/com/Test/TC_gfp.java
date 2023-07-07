@@ -287,55 +287,120 @@ public class TC_gfp  extends Base_Class {
 		}
 		
 		js.executeScript("window.scrollBy(0,250)", "");
-		Thread.sleep(2000);
 		if (IB_PPPC.equalsIgnoreCase("Y")) {
 			Library.Custom_Click(gfp.ibPPPC_check(), "IB PPPC Checked");
 		}
 	
+		Thread.sleep(4000);
+		Library.custom_Screenshot_GFP_Benfits(TC_ID);
+		
 		Library.Custom_Click(gfp.proceed(), "Proceed ");
-		
-		
+	
+		Thread.sleep(3000);
 		Library.Custom_Click(gfp.paylater(), "Pay Later");
 		
 		Library.Custom_Click(gfp.next(), "NEXT");
 		
-//============================================================================ Payment Page ===================================================================\\
+//============================================================================ Personal Detail  ===================================================================\\
 
-		gfp_journey_proposal_2  gfp2 =PageFactory.initElements(driver, gfp_journey_proposal_2.class);
-		
-		Library.Custom_SendKeys(gfp2.pancard(), "ERLPP1010A" , "Pancard");
-		Library.Custom_SendKeys(gfp2.fatherName(), "ABC", "Father Name");
-		Library.Custom_SendKeys(gfp2.lastName(), "xyz", "Last Name");
-		Library.Custom_SendKeys(gfp2.motherName(), "ABC", "Mother Name");
-		Library.Custom_SendKeys(gfp2.lastName1(), "xyz", "last Name");
-		
-		// Martial Status
-		if (Maritial_Status.equalsIgnoreCase("Single")) {
-			Library.Custom_Click(gfp2.single(), "Single");
-		} else if (Maritial_Status.equalsIgnoreCase("Married")) {
-			Library.Custom_Click(gfp2.married(), "Married");
-		} else if (Maritial_Status.equalsIgnoreCase("Divorced")) {
-			Library.Custom_Click(gfp2.divorced(), "Divorced");
-		} else if (Maritial_Status.equalsIgnoreCase("Widowed")) {
-			Library.Custom_Click(gfp2.divorced(), "Widowed");
-		}
-		
-		Library.Custom_SendKeys(gfp2.mobileNumber(), "7874514412", "Mobile Number");
-		
-		WebElement ageProof = driver.findElement(By.xpath("//select[@id='guideContainer-rootPanel-panel-panel1598249905601-panel-panel1593583406033-panel_525613555_copy-guidetextbox_copy_10-guidedropdownlist___widget']"));
-		Select ageProofList = new Select(ageProof);
-		ageProofList.selectByVisibleText("PAN card");
-		
-		WebElement idProof = driver.findElement(By.xpath("//select[@id='guideContainer-rootPanel-panel-panel1598249905601-panel-panel1593583406033-panel_525613555_copy-panel-guidedropdownlist_12___widget']"));
-		Select idProofList = new Select(idProof);
-		idProofList.selectByVisibleText("Ration Card");
-		
-		Library.Custom_Click(gfp2.proceed(), "Proceed");
-		
-		
-		
-		
-		log.info("================== || TEST SUCCESSFULLY EXECUTE ||================");
+//		gfp_journey_proposal_2  gfp2 =PageFactory.initElements(driver, gfp_journey_proposal_2.class);
+//		
+//		Library.Custom_SendKeys(gfp2.pancard(), "ERLPP1010A" , "Pancard");
+//		Library.Custom_SendKeys(gfp2.fatherName(), "ABC", "Father Name");
+//		Library.Custom_SendKeys(gfp2.lastName(), "xyz", "Last Name");
+//		Library.Custom_SendKeys(gfp2.motherName(), "ABC", "Mother Name");
+//		Library.Custom_SendKeys(gfp2.lastName1(), "xyz", "last Name");
+//		
+//		// Martial Status
+//		if (Maritial_Status.equalsIgnoreCase("Single")) {
+//			Library.Custom_Click(gfp2.single(), "Single");
+//		} else if (Maritial_Status.equalsIgnoreCase("Married")) {
+//			Library.Custom_Click(gfp2.married(), "Married");
+//		} else if (Maritial_Status.equalsIgnoreCase("Divorced")) {
+//			Library.Custom_Click(gfp2.divorced(), "Divorced");
+//		} else if (Maritial_Status.equalsIgnoreCase("Widowed")) {
+//			Library.Custom_Click(gfp2.divorced(), "Widowed");
+//		}
+//		
+//		Library.Custom_SendKeys(gfp2.mobileNumber(), "7874514412", "Mobile Number");
+//		
+//		Select ageProofList = new Select(gfp2.ageProof());
+//		ageProofList.selectByVisibleText("PAN card");
+//		
+//		
+//		Select idProofList = new Select(gfp2.idProof());
+//		idProofList.selectByVisibleText("Ration Card");
+//		
+//		Library.Custom_Click(gfp2.proceed(), "Proceed");
+//		
+////============================================================================ PROFESSIONAL DETAIL  ===================================================================\\
+//
+//	
+//		Thread.sleep(2000);
+//		Select natureOfDutyList = new Select(gfp2.natureOfDuty());
+//		Thread.sleep(4000);
+//		natureOfDutyList.selectByVisibleText("Others");
+//		
+//		Library.Custom_SendKeys(gfp2.provideDetail(), "ABC", "Provide Detail");
+//		Library.Custom_SendKeys(gfp2.orgnizationName(), "abc", "Orgnization Name - Canara_HSBC_LIFE_Insurance");
+//		Library.Custom_SendKeys(gfp2.pincode(), "431003", "Pincode");
+//		Library.Custom_SendKeys(gfp2.address(), "Aurangabad", "Address");
+//		Library.Custom_SendKeys(gfp2.orgnizationCity(), "Gurgaon", "Ognization City - Gurgaon");
+//		Library.Custom_Click(gfp2.moneyServiceBusiness_No(), "Money Service Business - NO");
+//		Library.Custom_Click(gfp2.riskAssociate_No(), "Risk Associate - NO");
+//		Library.Custom_Click(gfp2.proceed(), "Proceed");
+//		
+////============================================================================ CONTACT DETAIL  ===================================================================\\
+//		
+//		Library.Custom_SendKeys(gfp2.addressLine(), "ABC", "Address Line");
+//		
+//		Select cAddProof = new Select(gfp2.currentAddProof());
+//		cAddProof.selectByVisibleText("Ration Card");
+//		
+//		Library.Custom_Click(gfp2.residenceInJapan_NO(), "Residence In Japan - NO");
+//		Library.Custom_Click(gfp2.eInsurance(), "E-insurance Account - NO");
+//		Library.Custom_SendKeys(gfp2.cityOfBirth(), "Gurgaon", "City Of Birth - Gurgaon");
+//		Library.Custom_Click(gfp2.proceed(), "Proceed");
+//		
+////============================================================================ Insurance Detail  ===================================================================\\
+//		
+//		Library.Custom_Click(gfp2.policiesFiveYr_No(), "policies since last 5 years - NO");
+//		Library.Custom_Click(gfp2.modifiedTerms_NO(), "accepted with modified terms - NO");
+//		Library.Custom_Click(gfp2.proceed(), "Proceed");
+//		
+////============================================================================ Nominee Detail  ===================================================================\\
+//
+//		Library.Custom_SendKeys(gfp2.nomineFirstName(), "Dilip", "Nomine First Name - Dilip");
+//		Library.Custom_SendKeys(gfp2.nomineLastName(), "M", "Nomine First Name - M ");
+//		Library.Custom_SendKeys(gfp2.nomineDOB(), "28/09/1999", "Nominee DOB - 28/09/1999");
+//		Library.Custom_Click(gfp2.nomineMale(), "Gender - Male");
+//		Library.Custom_SendKeys(gfp2.nomineMobileNumber(), "7878747472", "Noimee Mob Num. - 7878747472 ");
+//		Library.Custom_SendKeys(gfp2.nomineEmail(), "abc.12@gmail.com", "Nominee Email - abc.12@gmail.com");
+//		
+//		Select nomineRelationList = new Select(gfp2.nomineRelation());
+//		nomineRelationList.selectByVisibleText("Brother");
+//		
+//		Library.Custom_Click(gfp2.proceed(), "Proceed");
+//		Thread.sleep(2000);
+//		Library.Custom_Click(gfp2.proceed(), "Proceed");
+//		
+////============================================================================ Bank Detail  ===================================================================\\
+//		
+//		Library.Custom_SendKeys(gfp2.accountNo(), "123456123456", "Account No - 123456123456");
+//		Library.Custom_SendKeys(gfp2.reenterAccountNo(), "123456123456", "Re-enter Account No - 123456123456");
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		log.info("================== || TEST SUCCESSFULLY EXECUTE ||================");
 
 	
 		

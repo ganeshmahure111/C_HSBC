@@ -119,6 +119,14 @@ public class Library extends Base_Class {
 	    FileHandler.copy(SrcFile6, DestFile6);
 	}
 	
+	public static void custom_Screenshot_GFP_Benfits(String name) throws Exception 
+	{	
+		String capture6=System.getProperty("user.dir")+"\\capture\\GFP\\GFP_" + name +".png";
+		TakesScreenshot scr6 =((TakesScreenshot)driver);
+	    File SrcFile6=scr6.getScreenshotAs(OutputType.FILE);
+	    File DestFile6=new File(capture6);
+	    FileHandler.copy(SrcFile6, DestFile6);
+	}
 	
 	public static void custom_print_premium (WebElement element, String rupees) 
 	{
