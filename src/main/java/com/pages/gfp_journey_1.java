@@ -63,6 +63,9 @@ public class gfp_journey_1 {
 		@FindBy (xpath = "//input[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593076844140-panel-panel1593610481480-panel-guidedatepicker___widget']")
 		private WebElement DOB;
 		
+		@FindBy (xpath = "//select[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593076844140-panel-guidedropdownlist___widget']")
+		private WebElement country;
+		
 		@FindBy (xpath = "//input[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593076844140-panel-guidetextbox___widget']")
 		private WebElement pindcode;
 		
@@ -78,6 +81,10 @@ public class gfp_journey_1 {
 		
 		public WebElement DOB() {
 			return DOB;
+		}
+		
+		public WebElement country() {
+			return country;
 		}
 		
 		public WebElement getpincode () {
@@ -157,6 +164,9 @@ public class gfp_journey_1 {
 		
 		@FindBy (xpath = "//input[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-panel_1051985890-panel_1139186743-panel-guidenumericbox___widget']")
 		private WebElement spouseMobileNumber;
+		
+		@FindBy (xpath = "//select[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-panel_1051985890-panel_1720780087-guidedropdownlist_15___widget']")
+		private WebElement spouseCountry;
 		
 		@FindBy (xpath = "//input[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-panel_1051985890-panel_1720780087-guidetextbox___widget']")
 		private WebElement spousePincode;
@@ -241,6 +251,10 @@ public class gfp_journey_1 {
 		
 		public WebElement spouseMobileNumber () {
 			return spouseMobileNumber;
+		}
+		
+		public WebElement spouseCountry () {
+			return spouseCountry;
 		}
 		
 		public WebElement spousePincode () {

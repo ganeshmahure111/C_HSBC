@@ -37,7 +37,7 @@ public class TC_gfp  extends Base_Class {
 		XSSFWorkbook wb = new XSSFWorkbook(fis);
 		XSSFSheet sheet=wb.getSheet("GFP");
 		int rowCount=sheet.getLastRowNum();
-		int colCount = 27;
+		int colCount = 31;
 		Object[][] dataObj = new Object[rowCount][colCount];
 
 		for (int i = 1; i <= rowCount; i++) {
@@ -55,10 +55,10 @@ public class TC_gfp  extends Base_Class {
 	public void verify_gfp_journey (
 									// Basic Details
 									String TC_ID,   String First_Name, String Middle_Name, String Last_Name, String Email_ID, String Mobile_Number, 
-									String Gender,String Dob, String Education, String Occupation, String anuualIncome, String Employee,
+									String Gender,String Dob,String Country, String Pincode,  String Education, String Occupation, String anuualIncome, String Employee,
 									
 									// Invest For 
-									String Invest_For , String InvestForGender , String Gender_DOB, String Gender_Education , String Gender_Ocupation , 
+									String Invest_For , String InvestForGender , String Gender_DOB,String LA_Country, String LA_Pincode, String Gender_Education , String Gender_Ocupation , 
 									String Gender_Annual_Income, String PPF , String Amount_Invest , String PPT , String Benefit_Type ,
 								
 									// Benefit 
@@ -103,8 +103,12 @@ public class TC_gfp  extends Base_Class {
 		}
 		
 		Library.Custom_SendKeys(gfp.DOB(),Dob , Dob);
-		Thread.sleep(3000);
-		Library.Custom_SendKeys(gfp.getpincode(), "431003" , "Pincode " + "431003");
+		
+		Select countryList = new Select (gfp.country());
+		Thread.sleep(2000);
+		countryList.selectByVisibleText(Country);
+		
+		Library.Custom_SendKeys(gfp.getpincode(), Pincode, "Pincode " + Pincode);
 		Thread.sleep(3000);
 	//	Library.Custom_Click(gfp.getcontinuebtn(), "Continue ");
 		Library.Custom_Click(gfp.getcontinuebtn(), "Continue - 2");
@@ -127,8 +131,7 @@ public class TC_gfp  extends Base_Class {
 		} else if (Employee.equalsIgnoreCase("No")) {
 			Library.custom_print("Click Successfully " + Employee);
 		}
-		
-	
+
 		Library.Custom_Click(gfp.getcontinuebtn(), "Continue ");
 		
 		//=================== Lead Page 3 ===================
@@ -152,7 +155,11 @@ public class TC_gfp  extends Base_Class {
 			Library.Custom_SendKeys(gfp.spouseEmailId(), "abc.12@gmail.com", "Gender Email - abc.12@gmail.com ");
 			Library.Custom_SendKeys(gfp.spouseMobileNumber(), "9158949494", "Gender MOB - 9158949494");
 			Library.Custom_Click(gfp.getcontinuebtn(), "Conitinue ");
-			Library.Custom_SendKeys(gfp.spousePincode(), "431003", "Pincode - 431003");
+			
+			Select laCountryList = new Select(gfp.spouseCountry());
+			laCountryList.selectByVisibleText(LA_Country);
+			
+			Library.Custom_SendKeys(gfp.spousePincode(), LA_Pincode, "Pincode - " + LA_Pincode);
 			
 			WebElement education = driver.findElement(By.xpath("//select[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-panel_1051985890-panel_1825705384-guidedropdownlist_99___widget']"));
 			Select genderEducationList = new Select(education);
@@ -184,7 +191,11 @@ public class TC_gfp  extends Base_Class {
 			Library.Custom_SendKeys(gfp.spouseEmailId(), "abc.12@gmail.com", "Gender Email - abc.12@gmail.com ");
 			Library.Custom_SendKeys(gfp.spouseMobileNumber(), "9158949494", "Gender MOB - 9158949494");
 			Library.Custom_Click(gfp.getcontinuebtn(), "Conitinue ");
-			Library.Custom_SendKeys(gfp.spousePincode(), "431003", "Pincode - 431003");
+			
+			Select laCountryList = new Select(gfp.spouseCountry());
+			laCountryList.selectByVisibleText(LA_Country);
+			
+			Library.Custom_SendKeys(gfp.spousePincode(), LA_Pincode, "Pincode - " + LA_Pincode);
 			
 			WebElement education = driver.findElement(By.xpath("//select[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-panel_1051985890-panel_1825705384-guidedropdownlist_99___widget']"));
 			Select genderEducationList = new Select(education);
@@ -216,7 +227,12 @@ public class TC_gfp  extends Base_Class {
 			Library.Custom_SendKeys(gfp.spouseEmailId(), "abc.12@gmail.com", "Gender Email - abc.12@gmail.com ");
 			Library.Custom_SendKeys(gfp.spouseMobileNumber(), "9158949494", "Gender MOB - 9158949494");
 			Library.Custom_Click(gfp.getcontinuebtn(), "Conitinue ");
-			Library.Custom_SendKeys(gfp.spousePincode(), "431003", "Pincode - 431003");
+			
+			
+			Select laCountryList = new Select(gfp.spouseCountry());
+			laCountryList.selectByVisibleText(LA_Country);
+			
+			Library.Custom_SendKeys(gfp.spousePincode(), LA_Pincode, "Pincode - " + LA_Pincode);
 			
 			WebElement education = driver.findElement(By.xpath("//select[@id='guideContainer-rootPanel-leadFormPanels-panel-panel1593077199576_c-panel-panel_1051985890-panel_1825705384-guidedropdownlist_99___widget']"));
 			Select genderEducationList = new Select(education);
@@ -388,19 +404,25 @@ public class TC_gfp  extends Base_Class {
 //		
 //		Library.Custom_SendKeys(gfp2.accountNo(), "123456123456", "Account No - 123456123456");
 //		Library.Custom_SendKeys(gfp2.reenterAccountNo(), "123456123456", "Re-enter Account No - 123456123456");
-//		
-//		
-//		
-//		
-//		
-//		
-//		
-//		
-//		
-//		
-//		
-//		
-//		log.info("================== || TEST SUCCESSFULLY EXECUTE ||================");
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		log.info("================== || TEST SUCCESSFULLY EXECUTE ||================");
 
 	
 		
